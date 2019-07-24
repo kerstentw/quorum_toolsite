@@ -4,6 +4,7 @@ const AVAILABLE_LANGUAGES = [
   ]
 
   const DEFAULT = "Ko"
+  var currentLang = DEFAULT
 
 function generateSelectorHTML(){
   let op_array = new Array();
@@ -11,14 +12,13 @@ function generateSelectorHTML(){
   for (let i = 0; i < AVAILABLE_LANGUAGES.length; i++) {
     op_array.push(AVAILABLE_LANGUAGES[i]);
   }
-  let inner = op_array.map(elem=> `<option value="${elem[1]}">${elem[0]}</option>`).join(" ")
+  let inner = op_array.map((elem)=> {return elem[1] == currentLang? `<option value="${elem[1]}" selected="selected">${elem[0]}</option>` : `<option value="${elem[1]}">${elem[0]}</option>`}).join(" ")
   return `<select class="lang_val"> ${inner} </select>`
 }
 
 function renderLanguageSelector(_lang_tag){
-  let lang_html = generateSelectorHTML;
+  let lang_html = generateSelectorHTML();
   $(_lang_tag).html(lang_html)
-  console.log($("#lang_val"))
 
 }
 
@@ -38,7 +38,6 @@ async function switchLanguageOnView(_lang_abbr){
       $(key).text(body);
     }
 
-    console.log(lang_struct)
 }
 
 renderLanguageSelector(".lang_select");
@@ -47,12 +46,12 @@ renderLanguageSelector(".lang_select");
 
 $(document).ready(()=>{
 
-  switchLanguageOnView(DEFAULT);
+  switchLanguageOnView(currentLang);
 
   $(".lang_val").on("change", function(){
     var select = $(this).val();
     switchLanguageOnView(select);
-
+    currentLang = select;
   })
 
 });
