@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required Meta Tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <title>Quorum Korea DevKit</title>
+        <link rel="icon" type="image/png"  target="_blank" href="static/images/favicon.png" />
+
+        <!--Core CSS -->
+        <link rel="stylesheet"  target="_blank" href="static/css/bulma.css">
+        <link rel="stylesheet"  target="_blank" href="static/css/app.css">
+        <link rel="stylesheet"  target="_blank" href="static/css/core_blue.css">
+        <link rel="stylesheet"  target="_blank" href="static/css/icons.min.css">
+
+
+    </head>
+    <body>
+        <div class="pageloader"></div>
+        <div class="infraloader is-active"></div>
+        <!-- Hero and Navbar -->
+        <div class="hero is-default is-bold is-fullheight">
+
+            <!-- Navbar partial -->
+            <nav class="navbar navbar-wrapper is-cloned">
+                <div class="container">
+                    <!-- Brand -->
+                    <div class="navbar-brand">
+                        <a class="navbar-item"  target="_blank" href="/">
+                            <img src="static/img/QLogo.png" alt="">
+                            <small>
+                              Korea
+                            </small>
+                        </a>
+
+
+
+                        <!-- Responsive toggle -->
+                        <div class="custom-burger" data-target="is-cloned">
+                            <a class="responsive-btn"  target="_blank" href="javascript:void(0);">
+                                <span class="menu-toggle">
+                                    <span class="icon-box-toggle">
+                                        <span class="rotate">
+                                            <i class="icon-line-top"></i>
+                                            <i class="icon-line-center"></i>
+                                            <i class="icon-line-bottom"></i>
+                                        </span>
+                                    </span>
+                                </span>
+                            </a>
+                        </div>
+                        <!-- /Responsive toggle -->
+                    </div>
+
+                    <!-- Navbar menu -->
+                    <div id="is-cloned" class="navbar-menu">
+                      <!-- Navbar Start -->
+                      <div class="navbar-start">
+                          <!-- Dropdown -->
+                          <div class="navbar-item has-dropdown is-hoverable is-mega is-hidden-mobile">
+
+                                <div class="navbar-link">
+                                  <div class="button btn-align mega-btn primary-btn">
+                                    Start Here
+                                  </div>
+                                </div>
+                              <div class="navbar-dropdown is-megamenu animated prefadeInUp fadeInUp" data-style="width: 18rem;">
+                                  <div class="mega-inner">
+                                      <div class="container">
+                                          <div class="columns">
+                                              <div class="column">
+                                                  <h2 class="title is-6 is-mega-menu-title">The Basics</h2>
+                                                  <a class="navbar-item is-flex"  target="_blank" href="Quorum-Overview.html" target="_blank">
+                                                      <i class="im im-icon-Sidebar-Window"></i>
+                                                      <div class="navbar-content">
+                                                          <p>
+                                                              <small class="color-secondary">1.) Understanding Quorum</small>
+                                                          </p>
+                                                          <p>Quorum 101</p>
+                                                      </div>
+                                                  </a>
+                                                  <a class="navbar-item is-flex"  target="_blank" href="Getting-Set-Up_.html">
+                                                      <i class="im im-icon-Time-Window"></i>
+                                                      <div class="navbar-content">
+                                                          <p>
+                                                              <small class="color-secondary">2.) Getting Setup</small>
+                                                          </p>
+                                                          <p>Get a Quorum Chain Going</p>
+                                                      </div>
+                                                  </a>
+                                                  <a class="navbar-item is-flex"  target="_blank" href="Using-Quorum_.html" target="_blank">
+                                                      <i class="im im-icon-Lock-Window"></i>
+                                                      <div class="navbar-content">
+                                                          <p>
+                                                              <small class="color-secondary">3.) Using Quorum</small>
+                                                          </p>
+                                                          <p>Start Developing</p>
+                                                      </div>
+                                                  </a>
+                                              </div>
+                                              <div class="column">
+                                                  <h2 class="title is-6 is-mega-menu-title">More Info</h2>
+                                                  <a class="navbar-item is-flex"  target="_blank" href="FAQ.html" target="_blank">
+                                                      <i class="im im-icon-Bar-Chart"></i>
+                                                      <div class="navbar-content">
+                                                          <p>
+                                                              <small class="color-secondary">FAQ</small>
+                                                          </p>
+                                                          <p>Frequently Asked Questions</p>
+                                                      </div>
+                                                  </a>
+                                                  <a class="navbar-item is-flex"  target="_blank" href="https://terms.naver.com/entry.nhn?docId=4396062&cid=59088&categoryId=59096" target="_blank">
+                                                      <i class="im im-icon-Financial"></i>
+                                                      <div class="navbar-content">
+                                                          <p>
+                                                              <small class="color-secondary">Ethereum</small>
+                                                          </p>
+                                                          <p>Understanding Ethereum</p>
+                                                      </div>
+                                                  </a>
+                                                  <a class="navbar-item is-flex"  target="_blank" href="https://github.com/jpmorganchase/quorum/blob/master/docs/Getting%20Started/api.md" target="_blank">
+                                                      <i class="im im-icon-Bank"></i>
+                                                      <div class="navbar-content">
+                                                          <p>
+                                                              <small class="color-secondary">API</small>
+                                                          </p>
+                                                          <p>Web3 & Quorum (EN)</p>
+                                                      </div>
+                                                  </a>
+                                              </div>
+                                              <div class="column">
+                                                  <h2 class="title is-6 is-mega-menu-title">Further Reading</h2>
+                                                  <a class="navbar-item is-flex"  target="_blank" href="https://github.com/kerstentw/QuorumDocumentation_KR">
+                                                      <i class="im im-icon-Folder-Archive"></i>
+                                                      <div class="navbar-content">
+                                                          <p>
+                                                              <small class="color-secondary">View Full Wiki</small>
+                                                          </p>
+                                                          <p>Checkout Korean Wiki on Github</p>
+                                                      </div>
+                                                  </a>
+                                                  <a class="navbar-item is-flex"  target="_blank" href="static/files/EnterpriseBlockchain.pdf">
+                                                      <i class="im im-icon-Mail-Attachement"></i>
+                                                      <div class="navbar-content">
+                                                          <p>
+                                                              <small class="color-secondary">Enterprise Blockchain</small>
+                                                          </p>
+                                                          <p>Download Enterprise Blockchain Deck</p>
+                                                      </div>
+                                                  </a>
+                                              </div>
+                                              <div class="column">
+                                                  <h2 class="title is-6 is-mega-menu-title">Main Repository</h2>
+                                                  <p class="is-cta">This is the official Quorum Repository (English)</p>
+                                                  <p class="is-cta">
+                                                      <a  target="_blank" href="https://github.com/jpmorganchase" class="button btn-align mega-btn secondary-btn" target="_blank">View</a>
+                                                  </p>
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                      <hr class="navbar-divider">
+                                      <div class="navbar-item is-footer is-hidden-mobile">
+                                          <div class="navbar-content">
+                                              <div class="level is-mobile">
+
+
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                      <div class="menu-image is-hidden-mobile">
+                                          <img src="static/images/bg/shapes/megamenu-blue.svg" alt="">
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>                <!-- Navbar item -->
+                          <a class="navbar-item is-slide is-centered-tablet is-hidden-desktop is-hidden-tablet"  target="_blank" href="landing-v4-features.html">
+                              Start Here
+                          </a>
+
+                      </div>
+
+                      <!-- Navbar end -->
+                        <div class="navbar-end">
+                            <!-- Navbar item -->
+                            <a class="navbar-item is-slide is-centered-tablet"  target="_blank" href="https://www.posri.re.kr/files/file_pdf/63/15605/63_15605_file_pdf_1546936319.pdf" data-lity>
+                              Blockchain 101
+                            </a>
+                            <a class="navbar-item is-slide is-centered-tablet"  target="_blank" href="https://www.onoffmix.com/event/184466">
+                                Hackathon
+                            </a>
+                            <!-- Navbar item -->
+                            <a class="navbar-item is-slide is-centered-tablet"  target="_blank" href="#toolsets">
+                                Toolsets
+                            </a>
+
+                            <!-- Navbar item -->
+                            <a class="navbar-item is-slide is-centered-tablet"  target="_blank" href="#examples">
+                                Examples
+                            </a>
+                            <!-- Signup button -->
+                            <div class="navbar-item is-button is-centered-tablet">
+                                <a id="#signup-btn"  target="_blank" href="landing-v4-login.html" class="button button-cta is-bold btn-align secondary-btn raised">
+                                    Testnet
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <nav class="navbar navbar-wrapper is-transparent is-static">
+                <div class="container">
+                    <!-- Brand -->
+                    <div class="navbar-brand">
+                        <a class="navbar-item"  target="_blank" href="/">
+                            <img src="static/img/QLogo.png" alt="">
+                            <small>
+                              Korea
+                            </small>
+                        </a>
+
+
+
+                    </div>
+
+                    <!-- Navbar menu -->
+                    <div id="is-static" class="navbar-menu">
+                        <!-- Navbar Start -->
+                        <div class="navbar-start">
+                            <!-- Dropdown -->
+                            <div class="navbar-item has-dropdown is-hoverable is-mega is-hidden-mobile">
+                              <div class="navbar-link">
+                                <div class="button btn-align mega-btn primary-btn">
+                                  Start Here
+                                </div>
+                              </div>
+                                <div class="navbar-dropdown is-megamenu animated prefadeInUp fadeInUp" data-style="width: 18rem;">
+                                    <div class="mega-inner">
+                                        <div class="container">
+                                            <div class="columns">
+                                                <div class="column">
+                                                    <h2 class="title is-6 is-mega-menu-title">The Basics</h2>
+                                                    <a class="navbar-item is-flex"  target="_blank" href="Quorum-Overview.html" target="_blank">
+                                                        <i class="im im-icon-Sidebar-Window"></i>
+                                                        <div class="navbar-content">
+                                                            <p>
+                                                                <small class="color-secondary">1.) Understanding Quorum</small>
+                                                            </p>
+                                                            <p>Quorum 101</p>
+                                                        </div>
+                                                    </a>
+                                                    <a class="navbar-item is-flex"  target="_blank" href="Getting-Set-Up_.html">
+                                                        <i class="im im-icon-Time-Window"></i>
+                                                        <div class="navbar-content">
+                                                            <p>
+                                                                <small class="color-secondary">2.) Getting Setup</small>
+                                                            </p>
+                                                            <p>Get a Quorum Chain Going</p>
+                                                        </div>
+                                                    </a>
+                                                    <a class="navbar-item is-flex"  target="_blank" href="Using-Quorum_.html" target="_blank">
+                                                        <i class="im im-icon-Lock-Window"></i>
+                                                        <div class="navbar-content">
+                                                            <p>
+                                                                <small class="color-secondary">3.) Using Quorum</small>
+                                                            </p>
+                                                            <p>Start Developing</p>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="column">
+                                                    <h2 class="title is-6 is-mega-menu-title">More Info</h2>
+                                                    <a class="navbar-item is-flex"  target="_blank" href="FAQ.html" target="_blank">
+                                                        <i class="im im-icon-Bar-Chart"></i>
+                                                        <div class="navbar-content">
+                                                            <p>
+                                                                <small class="color-secondary">FAQ</small>
+                                                            </p>
+                                                            <p>Frequently Asked Questions</p>
+                                                        </div>
+                                                    </a>
+                                                    <a class="navbar-item is-flex"  target="_blank" href="https://terms.naver.com/entry.nhn?docId=4396062&cid=59088&categoryId=59096" target="_blank">
+                                                        <i class="im im-icon-Financial"></i>
+                                                        <div class="navbar-content">
+                                                            <p>
+                                                                <small class="color-secondary">Ethereum</small>
+                                                            </p>
+                                                            <p>Understanding Ethereum</p>
+                                                        </div>
+                                                    </a>
+                                                    <a class="navbar-item is-flex"  target="_blank" href="https://github.com/jpmorganchase/quorum/blob/master/docs/Getting%20Started/api.md" target="_blank">
+                                                        <i class="im im-icon-Bank"></i>
+                                                        <div class="navbar-content">
+                                                            <p>
+                                                                <small class="color-secondary">API</small>
+                                                            </p>
+                                                            <p>Web3 & Quorum (EN)</p>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="column">
+                                                    <h2 class="title is-6 is-mega-menu-title">Further Reading</h2>
+                                                    <a class="navbar-item is-flex"  target="_blank" href="https://github.com/kerstentw/QuorumDocumentation_KR">
+                                                        <i class="im im-icon-Folder-Archive"></i>
+                                                        <div class="navbar-content">
+                                                            <p>
+                                                                <small class="color-secondary">View Full Wiki</small>
+                                                            </p>
+                                                            <p>Checkout Korean Wiki on Github</p>
+                                                        </div>
+                                                    </a>
+                                                    <a class="navbar-item is-flex"  target="_blank" href="static/files/EnterpriseBlockchain.pdf">
+                                                        <i class="im im-icon-Mail-Attachement"></i>
+                                                        <div class="navbar-content">
+                                                            <p>
+                                                                <small class="color-secondary">Enterprise Blockchain</small>
+                                                            </p>
+                                                            <p>Download Enterprise Blockchain Deck</p>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="column">
+                                                    <h2 class="title is-6 is-mega-menu-title">Main Repository</h2>
+                                                    <p class="is-cta">This is the official Quorum Repository (English)</p>
+                                                    <p class="is-cta">
+                                                        <a  target="_blank" href="https://github.com/jpmorganchase" class="button btn-align mega-btn secondary-btn" target="_blank">View</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <hr class="navbar-divider">
+                                        <div class="navbar-item is-footer is-hidden-mobile">
+                                            <div class="navbar-content">
+                                                <div class="level is-mobile">
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="menu-image is-hidden-mobile">
+                                            <img src="static/images/bg/shapes/megamenu-blue.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                <!-- Navbar item -->
+                            <a class="navbar-item is-slide is-centered-tablet is-hidden-desktop is-hidden-tablet"  target="_blank" href="landing-v4-features.html">
+                                Start Here
+                            </a>
+
+                        </div>
+
+                        <!-- Navbar end -->
+                        <div class="navbar-end">
+                            <!-- Navbar item -->
+                            <a class="navbar-item is-slide is-centered-tablet"  target="_blank" href="https://www.posri.re.kr/files/file_pdf/63/15605/63_15605_file_pdf_1546936319.pdf" data-lity>
+                                Blockchain 101
+                            </a>
+                            <!-- Navbar item -->
+                            <a class="navbar-item is-slide is-centered-tablet"  target="_blank" href="https://www.onoffmix.com/event/184466">
+                                Hackathon
+                            </a>
+                            <!-- Navbar item -->
+                            <a class="navbar-item is-slide is-centered-tablet"  target="_blank" href="#toolsets">
+                                Toolsets
+                            </a>
+                            <!-- Navbar item -->
+                            <a class="navbar-item is-slide is-centered-tablet"  target="_blank" href="#examples">
+                                Examples
+                            </a>
+
+                            <!-- Signup button -->
+                            <div class="navbar-item is-button is-centered-tablet">
+                                <a id="#signup-btn-double"  target="_blank" href="http://quorumtestnetkorea.avocadoterminal.com/" class="button button-cta is-bold btn-align secondary-btn raised" target="_blank">
+                                    Testnet
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Hero content -->
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns is-vcentered">
+                        <div class="column is-6">
+                            <figure class="">
+                                <img src="static/images/illustrations/drawings/landing5-2.svg" alt="">
+                            </figure>
+                        </div>
+                        <div class="column is-5 is-offset-1 is-hero-title">
+                            <h1 class="title is-1 is-bigger">
+                                Quorum Korea Toolkits & Examples
+                            </h1>
+                            <h2 class="subtitle is-4">
+                                This site is the hub for Quorum Korea's Toolkits and repositories.  Here, you can find easy access to a variety of translated docs, helpful code bits, and examples to help you develop on Quorum.
+                                <br/><br/>
+                                <small>
+                                If you know blockchain and Ethereum already click the button below.  If you are a beginner, check out the 'Start Here' section above.
+                              </small>
+                            </h2>
+                            <p class="">
+                                <a  target="_blank" href="#toolsets" class="button button-cta is-bold btn-align secondary-btn raised">
+                                   Jump In!
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- /Hero and Navbar -->
+
+        <!-- Team Section -->
+        <div id = "toolsets" class="section section-feature-grey is-medium has-background-image is-contain" data-background="static/images/bg/shapes/circles-and-shapes.png">
+            <div class="container">
+                <!-- Title -->
+                <div class="section-title-wrapper has-text-centered">
+                    <!-- Divider -->
+                    <div class="special-divider">
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <h2 class="title is-2">Toolsets</h2>
+                    <h4 class="subtitle is-4">Some helpful tools for building Quorum apps.</h4>
+                </div>
+
+                <!-- Content -->
+                <div  class="content-wrapper">
+                    <div class="columns">
+                        <div class="column is-hidden-mobile"></div>
+                        <!-- Team member -->
+                        <div class="column is-3">
+                            <div class="hero-box has-text-centered">
+                                <img src="static/images/illustrations/faces/face-1.svg" alt="">
+                                <div class="name">Quorum Core</div>
+                                <div class="position">Main Repository | Go | Geth-based</div>
+                                <p>This Repo is the main repo for Quorum's Eth-based Blockchain solution</p>
+                                <div class="social">
+                                    <a  target="_blank" href="https://github.com/jpmorganchase/quorum" target="_blank"><i class="fa fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Team member -->
+                        <div class="column is-3">
+                            <div class="hero-box has-text-centered">
+                                <img src="static/images/illustrations/faces/face-2.svg" alt="">
+                                <div class="name">Tessera</div>
+                                <div class="position">Java | Privacy | Encryption</div>
+                                <p>Enterprise Implementation of Quorum's transaction manager</p>
+                                <div class="social">
+                                    <a  target="_blank" href="https://github.com/jpmorganchase/tessera"><i class="fa fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Team member -->
+                        <div class="column is-3">
+                            <div class="hero-box has-text-centered">
+                                <img src="static/images/illustrations/faces/face-3.svg" alt="">
+                                <div class="name">Cakeshop</div>
+                                <div class="position">SDK | Editor | IDE</div>
+                                <p>An integrated development environment and SDK for Ethereum-like ledgers</p>
+                                <div class="social">
+                                    <a  target="_blank" href="https://github.com/jpmorganchase/cakeshop"><i class="fa fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="column is-hidden-mobile"></div>
+                    </div>
+
+                    <div class="columns">
+                        <div class="column is-hidden-mobile"></div>
+
+                        <!-- Team member -->
+                        <div class="column is-3">
+                            <div class="hero-box has-text-centered">
+                                <img src="static/images/illustrations/faces/face-5.svg" alt="">
+                                <div class="name">Constellation</div>
+                                <div class="position">Haskell | Peer-2-Peer</div>
+                                <p>A Peer-to-peer encrypted message exchange</p>
+                                <div class="social">
+                                    <a  target="_blank" href="https://github.com/jpmorganchase/constellation"><i class="fa fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Team member -->
+                        <div class="column is-3">
+                            <div class="hero-box has-text-centered">
+                                <img src="static/images/illustrations/faces/face-4.svg" alt="">
+                                <div class="name">Quorum Tools</div>
+                                <div class="position">Development | Haskell</div>
+                                <p>This project contains tools for running Quorum clusters and integration testing Quorum.</p>
+                                <div class="social">
+                                    <a  target="_blank" href="https://github.com/jpmorganchase/quorum-tools"><i class="fa fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Team member -->
+                        <div class="column is-3">
+                            <div class="hero-box has-text-centered">
+                                <img src="static/images/illustrations/faces/face-6.svg" alt="">
+                                <div class="name">Quorum Cloud</div>
+                                <div class="position">HCL | Shell </div>
+                                <p>Deploy Quorum network in a cloud provider of choice</p>
+                                <div class="social">
+                                    <a  target="_blank" href="https://github.com/jpmorganchase/quorum-cloud"><i class="fa fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="column is-hidden-mobile"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Team Section -->
+
+        <!-- Side Features Section -->
+        <div class="section is-medium" id="examples">
+            <div class="container">
+              <div class="section-title-wrapper has-text-centered">
+                  <!-- Divider -->
+                  <div class="special-divider">
+                      <span></span>
+                      <span></span>
+                  </div>
+                  <h2 class="title is-2">Examples</h2>
+                  <h4 class="subtitle is-4">Examples of Quorum Usage and Chain Deployment</h4>
+              </div>
+
+                <!-- Feature -->
+                <div class="columns is-vcentered">
+                    <div class="column is-7 has-text-centered">
+                        <img class="featured-svg" src="static/images/illustrations/drawings/landing5-1.svg" alt="">
+                    </div>
+
+                    <div class="column is-5">
+                        <h3 class="detailed-feature-subtitle">Testing</h3>
+                        <h2 class="title is-3 no-margin">7 Nodes Example </h2>
+                        <div class="title-divider"></div>
+                        <span class="section-feature-description">Starts up a fully-functioning Quorum environment consisting of 7 independent nodes. From this example one can test consensus, privacy, and all the expected functionality of an Ethereum platform.</span>
+                        <div class="pt-10 pb-10">
+                            <a  target="_blank" href="https://github.com/jpmorganchase/quorum-examples/blob/master/examples/7nodes" class="button btn-align btn-more is-link color-secondary">
+                                Fork on Github <i class="sl sl-icon-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Feature -->
+
+                <!-- Feature -->
+                <div class="columns is-vcentered">
+                    <div class="column is-7 has-text-centered is-hidden-tablet is-hidden-desktop">
+                        <img class="featured-svg" src="static/images/illustrations/drawings/landing5-3.svg" alt="">
+                    </div>
+
+                    <div class="column is-5 has-text-right">
+                        <h3 class="detailed-feature-subtitle">Simulation</h3>
+                        <h2 class="title is-3 no-margin">5 Nodes RTGS</h2>
+                        <div class="title-divider is-right"></div>
+                        <span class="section-feature-description">Starts up a set of 5 nodes that simulates a Real-time Gross Setlement environment with 3 banks, one regulator (typically a central bank) and an observer that cannot access the private data.</span>
+                        <div class="pt-10 pb-10">
+                            <a  target="_blank" href="https://github.com/bacen/quorum-examples/tree/master/examples/5nodesRTGS" class="button btn-align btn-more is-link color-secondary">
+                                Clone on Github <i class="sl sl-icon-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="column is-7 has-text-centered is-hidden-mobile">
+                        <img class="featured-svg" src="static/images/illustrations/drawings/landing5-3.svg" alt="">
+                    </div>
+                </div>
+                <!-- /Feature -->
+
+                <!-- Feature -->
+                <div class="columns is-vcentered">
+                    <div class="column is-7 has-text-centered">
+                        <img class="featured-svg" src="static/images/illustrations/drawings/landing5-4.svg" alt="">
+                    </div>
+
+                    <div class="column is-5">
+                        <h3 class="detailed-feature-subtitle">Dapp Example </h3>
+                        <h2 class="title is-3 no-margin">Quorum File Hashing</h2>
+                        <div class="title-divider"></div>
+                        <span class="section-feature-description">Basic Dapp demonstrating Hashing of a File and Saving it to a basic Quorum Blockchain.  Requires access to a Quorum RPC to run.</span>
+                        <div class="pt-10 pb-10">
+                            <a  target="_blank" href="#" class="button btn-align btn-more is-link color-secondary">
+                                Learn more about this <i class="sl sl-icon-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Feature -->
+
+                <!-- CTA
+                <h2 class="has-text-centered">
+                    <a  target="_blank" href="landing-v4-features.html" class="button button-cta is-bold btn-align primary-btn raised">
+                        See all Features
+                    </a>
+                </h2>
+                /CTA -->
+
+            </div>
+        </div>
+        <!-- /Side Features Section -->
+
+
+
+
+
+
+
+
+
+        <!-- Footer -->
+        <!-- Simple light footer -->
+        <footer class="footer footer-light-medium">
+            <div class="container">
+                <div class="columns">
+                    <!-- Column -->
+                    <div class="column is-4">
+                        <div class="pt-10 pb-10">
+                          <a class="navbar-item"  target="_blank" href="/">
+                              <img src="static/img/QLogo.png" alt="">
+                              <small>
+                                Korea
+                              </small>
+                          </a>
+                        </div>
+                        <div>
+                            <span class="moto">Designed and coded with <i class="fa fa-heart color-red"></i> by Proof Suite.</span>
+                            <div class="social-links pt-10 pb-10">
+                                <a  target="_blank" href="#">
+                                    <span class="icon"><i class="fa fa-facebook"></i></span>
+                                </a>
+                                <a  target="_blank" href="#">
+                                    <span class="icon"><i class="fa fa-twitter"></i></span>
+                                </a>
+                                <a  target="_blank" href="#">
+                                    <span class="icon"><i class="fa fa-linkedin"></i></span>
+                                </a>
+                                <a  target="_blank" href="#">
+                                    <span class="icon"><i class="fa fa-dribbble"></i></span>
+                                </a>
+                                <a  target="_blank" href="#">
+                                    <span class="icon"><i class="fa fa-github"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <div class="column is-6 is-offset-2">
+                        <div class="columns">
+                            <!-- Column -->
+                            <div class="column">
+                                <ul class="footer-column">
+                                    <li class="column-header">
+                                        DevKit
+                                    </li>
+                                    <li class="column-item"><a  target="_blank" href="#">Home</a></li>
+                                    <li class="column-item"><a  target="_blank" href="#toolsets">Toolsets</a></li>
+                                    <li class="column-item"><a  target="_blank" href="#examples">Examples</a></li>
+                                </ul>
+                            </div>
+                            <!-- Column -->
+                            <div class="column">
+                                <ul class="footer-column">
+                                    <li class="column-header">
+                                        Ressources
+                                    </li>
+                                    <li class="column-item"><a  target="_blank" href="https://github.com/jpmorganchase">Github</a></li>
+                                    <li class="column-item"><a  target="_blank" href="https://github.com/kerstentw/QuorumDocumentation_KR">Korean Wiki</a></li>
+                                    <li class="column-item"><a  target="_blank" href="https://quorumhackathonkorea.com/">Hackathon Korea</a></li>
+                                    <li class="column-item"><a  target="_blank" href="https://www.onoffmix.com/event/184466">Sign Up</a></li>
+                                </ul>
+                            </div>
+                            <!-- Column -->
+                            <div class="column">
+                                <ul class="footer-column">
+                                    <li class="column-header">
+                                        Terms
+                                    </li>
+                                    <li class="column-item"><a  href="#">Terms of Service</a></li>
+                                    <li class="column-item"><a  href="#">Privacy policy</a></li>
+                                    <li class="column-item"><a  href="#">SaaS services</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- /Simple light footer -->        <!-- Side navigation -->
+        <div class="side-navigation-menu">
+            <!-- Categories menu -->
+            <div class="category-menu-wrapper">
+                <!-- Menu -->
+                <ul class="categories">
+                    <li class="square-logo"><img src="static/images/logos/square-white.svg" alt=""></li>
+                    <li class="category-link is-active" data-navigation-menu="demo-pages"><i class="sl sl-icon-layers"></i></li>
+                    <li class="category-link" data-navigation-menu="onepagers"><i class="sl sl-icon-energy"></i></li>
+                    <li class="category-link" data-navigation-menu="components"><i class="sl sl-icon-grid"></i></li>
+                    <li class="category-link" data-navigation-menu="extras"><i class="sl sl-icon-present"></i></li>
+                </ul>
+                <!-- Menu -->
+
+                <ul class="author">
+                    <li>
+                        <!-- Theme author -->
+                        <a  target="_blank" href="https://cssninja.io" target="_blank">
+                            <img class="main-menu-author" src="static/images/logos/cssninja.svg" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /Categories menu -->
+
+           <!-- Back To Top Button -->
+        <div id="backtotop"><a  target="_blank" href="#"></a></div>        <!-- Concatenated jQuery and plugins -->
+        <script src="static/js/app.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        <!-- Bulkit js -->
+        <script src="static/js/main.js"></script>
+        <script src="static/js/landingv4.js"></script>
+
+        <!-- Lity Imports  -->
+        <link rel="stylesheet"  target="_blank" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.css" integrity="sha256-76wKiAXVBs5Kyj7j0T43nlBCbvR6pqdeeZmXI4ATnY0=" crossorigin="anonymous" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.js" integrity="sha256-28JiZvE/RethQIYCwkMdtSMHgI//KoTLeB2tSm10trs=" crossorigin="anonymous"></script>
+        <link rel="stylesheet"  target="_blank" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.css" integrity="sha256-0SZxASYAglrmIuTx+ZYHE3hzTnCZWB7XLu+iA8AG0Z0=" crossorigin="anonymous" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.js" integrity="sha256-3VzI8FuSG20IfvIDKRptBR+1d4T6G57eDIf6ZEO13iY=" crossorigin="anonymous"></script>
+
+      </body>
+</html>

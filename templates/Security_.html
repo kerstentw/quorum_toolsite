@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.2.5.2 (MacOSX)"/>
+	<meta name="created" content="2019-06-21T07:53:00"/>
+	<meta name="changed" content="00:00:00"/>
+	<style type="text/css">
+		@page { size: 8.5in 11in; margin: 1in }
+		p { margin-bottom: 0.1in; direction: ltr; line-height: 115%; text-align: left; orphans: 2; widows: 2; background: transparent }
+		h2 { margin-top: 0.33in; margin-bottom: 0.11in; direction: ltr; line-height: 140%; text-align: left; orphans: 2; widows: 2; background: transparent }
+		h2.western { font-family: "Calibri", serif; font-size: 16pt; font-weight: bold }
+		h2.cjk { font-family: ; font-size: 16pt; font-weight: bold }
+		h2.ctl { font-family: ; font-size: 16pt; font-weight: bold }
+		a:link { color: #000080; so-language: zxx; text-decoration: underline }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><h2 class="western">
+<font face=""><span lang="zh-CN">네트워크 권한</span></font></h2>
+<p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%">
+<font face="Cambria"><span lang="zh-CN">네트워크 권한이란 어떤
+노드가 특정 노드에 연결하거나 데이터를 전송하는
+것을 제어하는 기능입니다</span></font>. <font face="Cambria"><span lang="zh-CN">노드를
+기동할 때 </span></font><font face="Consolas, serif">--permissioned</font>
+<font face="Cambria"><span lang="zh-CN">플래그를 통해 네트워크
+권한 적용이 가능하며</span></font>, <font face="Cambria"><span lang="zh-CN">권한은
+각 노드 별로 관리됩니다</span></font>. 
+</p>
+<p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%"><a name="_heading=h.gjdgxs"></a>
+<font face="Consolas, serif">--permissioned </font><font face="Cambria"><span lang="zh-CN">플래그가
+설정되면 노드는 </span></font><i>&lt;data-dir&gt;/permissioned-nodes.json
+</i><font face="Cambria"><span lang="zh-CN">파일을 찾습니다</span></font>.
+<font face="Cambria"><span lang="zh-CN"><font color="#222222"><span style="background: #f8f9fa">이
+파일은 해당 노드가 연결하거나 연결을 허용하는
+노드들의 </span></font>enode <font face="Cambria"><span lang="zh-CN">목록입니다</span></font>.
+<font face="Cambria"><span lang="zh-CN">즉</span></font>, <font face="Cambria"><span lang="zh-CN">네트워크
+권한 기능을 사용하면</span></font><font color="#222222"><span style="background: #f8f9fa"><font size="3" style="font-size: 12pt">
+</font></span></font></span></font><i>permissioned-nodes.json</i><font color="#222222"><font size="3" style="font-size: 12pt"><span style="background: #f8f9fa">
+</span></font></font><font face="Cambria"><span lang="zh-CN"><font color="#222222"><span style="background: #f8f9fa">파일에
+나열된 노드만 네트워크에 참여 가능합니다</span></font>.
+</span></font><font face="Consolas, serif">--permissioned</font><font color="#222222"><font size="3" style="font-size: 12pt"><span style="background: #f8f9fa">
+</span></font></font><font face="Cambria"><span lang="zh-CN"><font color="#222222"><span style="background: #f8f9fa">플래그를
+설정하였지만 </span></font></span></font><i>permissioned-nodes.json</i><font color="#222222"><span style="background: #f8f9fa">
+<font face="Cambria"><span lang="zh-CN">파일에 아무 내용도
+기술하지 않는 경우</span></font>, <font face="Cambria"><span lang="zh-CN">이
+노드는 다른 어떤 노드와도 연결할 수 없습니다</span></font>.</span></font></p>
+<p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%">
+<i>permissioned-nodes.json </i><font face="Cambria"><span lang="zh-CN"><font color="#222222"><span style="background: #f8f9fa">파일은아래와
+같이  </span></font>static-nodes.json <font face="Cambria"><span lang="zh-CN">파일</span></font>(<font face="Cambria"><span lang="zh-CN">노드가
+항상 연결하는 정적</span></font>(static) <font face="Cambria"><span lang="zh-CN">노드
+목록</span></font>)<font face="Cambria"><span lang="zh-CN">과 비슷한
+패턴을 따릅니다</span></font>.</span></font></p>
+<p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%">
+<br/>
+<br/>
+
+</p>
+<p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%">
+<font face="Consolas, serif">[
+&quot;enode://remoteky1@ip1:port1&quot;,&quot;enode://remoteky1@ip2:port2&quot;,&quot;enode://remoteky1@ip3:port3&quot;,
+]</font></p>
+<p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%">
+<font face="Cambria"><span lang="zh-CN">샘플 파일</span></font>:
+(<font face="Cambria"><span lang="zh-CN">뒷부분 노드 </span></font>ID
+<font face="Cambria"><span lang="zh-CN">일부 생략</span></font>)</p>
+<p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%">
+<font face="Consolas, serif">[  
+&quot;enode://6598638ac5b15ee386210156a43f565fa8c485924894e2f3a967207c047470@127.0.0.1:30300&quot;,]</font></p>
+<p style="margin-left: 0.5in; text-indent: -0.5in; margin-top: 0.21in; margin-bottom: 0.21in; border: none; padding: 0in; line-height: 140%">
+<font face="Cambria"><span lang="zh-CN">참고</span></font><font color="#000000">:
+</font><font face="Cambria"><span lang="zh-CN">현재 버전에서는
+모든 노드에 자체의 </span></font><i>permissioned-nodes.json</i>
+<font face="Cambria"><span lang="zh-CN">파일 사본이 있습니다</span></font>.
+<font face="Cambria"><span lang="zh-CN">이 경우</span></font>, <font face="Cambria"><span lang="zh-CN">여러
+노드가 서로 다른 리모트 키</span></font>(remote key) <font face="Cambria"><span lang="zh-CN">목록을
+가지면서 서로 다른 허가된 노드 목록을 가지게
+되면</span></font>(<font face="Cambria"><span lang="zh-CN">네트워크를
+구성하려는 노드들의</span></font><i>permissioned-nodes.json</i>
+<font face="Cambria"><span lang="zh-CN">파일 내용이 서로 다른
+경우</span></font>) <font face="Cambria"><span lang="zh-CN">동작
+상에 예상치 못한 문제가 발생할 수 있습니다</span></font>.
+<font face="Cambria"><span lang="zh-CN">향후에는 허가된 노드
+목록을  </span></font><i>permissioned-nodes.json </i><font face="Cambria"><span lang="zh-CN">파일이
+아니라 스마트 컨트랙트로 관리할 것입니다</span></font>.
+<font face="Cambria"><span lang="zh-CN">이를 통해 네트워크
+연결을 확인하려는 모든 노드들은 하나의 글로벌 온
+체인</span></font>(on-chain) <font face="Cambria"><span lang="zh-CN">목록을
+사용하도록 할 것입니다</span></font>. <font face="Cambria"><span lang="zh-CN">추가로
+예정된 개선 사항은 </span></font>[[<font face="Cambria"><span lang="zh-CN">제품
+로드맵</span></font>|<font face="Cambria"><span lang="zh-CN">제품
+로드맵</span></font>]]<font face="Cambria"><span lang="zh-CN">을
+참조하십시오</span></font>.</p>
+<h2 class="western"><font face=""><span lang="zh-CN">엔클레이브</span></font>(Enclave)
+<font face=""><span lang="zh-CN">암호화 기술 </span></font>
+</h2>
+<p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%">
+<font face="Cambria"><span lang="zh-CN">엔클레이브는
+</span></font>xsalsa20poly1305(<font face="Cambria"><span lang="zh-CN">페이로드
+컨테이너에서 사용하는 암호화 모듈</span></font>) <font face="Cambria"><span lang="zh-CN">와
+</span></font>curve25519xsalsa20poly1305(<font face="Cambria"><span lang="zh-CN">수신자
+박스에서 사용하는 비대칭 암호화 모듈</span></font>)<font face="Cambria"><span lang="zh-CN">를
+사용하는 트랜잭션 매니저를 통해 송신된 페이로드를
+암호화합니다</span></font>. <font face="Cambria"><span lang="zh-CN">페이로드
+암호화는 각 페이로드별로 암호화를 처리하기 위한
+페이로드 컨테이너와 </span></font>N<font face="Cambria"><span lang="zh-CN">개의
+수신자 박스를 생성하는데</span></font>, <font face="Cambria"><span lang="zh-CN">여기서
+</span></font>N<font face="Cambria"><span lang="zh-CN">은 트랜잭션의
+</span></font><font face="Consolas, serif">privateFor</font> <font face="Cambria"><span lang="zh-CN">파라미터에
+지정된 수신자의 수입니다</span></font>. <br/>
+*<font face="Cambria"><span lang="zh-CN">페이로드
+컨테이너에는 대칭 키와 임의의 논스</span></font>(nonce)<font face="Cambria"><span lang="zh-CN">로
+암호화된 페이로드가 들어 있습니다</span></font>. <br/>
+*<font face="Cambria"><span lang="zh-CN">수신자
+박스는 임의의 논스를 사용하는 수신자의 공개키를
+위해 암호화된 페이로드 컨테이너의 마스터 키입니다</span></font>.
+(<font face="Cambria"><span lang="zh-CN">수신자 박스는 기본적으로
+</span></font>PGP(Pretty Good Privacy)<font face="Cambria"><span lang="zh-CN">가
+동작하는 방식과 동일하게 동작하지만 </span></font><a href="https://nacl.cr.yp.to/"><font color="#0000ff"><u>NaCl</u></font></a>
+<font face="Cambria"><span lang="zh-CN">암호화 라이브러리를
+사용한다는 점에 유의하십시오</span></font>.)</p>
+<p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%">
+<font face="Cambria"><span lang="zh-CN">현재 시스템은 퍼블릭
+키 목록을 화이트리스트에 수동으로 정의하여야 하고</span></font>,
+<font face="Cambria"><span lang="zh-CN">키 교체가 자동화 되어있지
+않지만 네트워크를 구성하는 노드들에서 여러 키를
+한 번에 공고할 수 있도록 하여 기본적인 키 교체 기능을
+제공하고 있습니다</span></font>. <font face="Cambria"><span lang="zh-CN">이를
+원활하고 자동화할 수 있도록 돕는 툴은 </span></font>[<font face="Cambria"><span lang="zh-CN">제품
+로드맵</span></font>|<font face="Cambria"><span lang="zh-CN">제품
+로드맵</span></font>]]<font face="Cambria"><span lang="zh-CN">에서
+확인하십시오</span></font>. <font face="Cambria"><span lang="zh-CN">또한</span></font>,
+Quorum<font face="Cambria"><span lang="zh-CN">은 현재 </span></font>PKI
+<font face="Cambria"><span lang="zh-CN">시스템을 가지고 있지
+않지만</span></font>, <font face="Cambria"><span lang="zh-CN">화이트리스트에
+수동으로 추가될 키를 임의로 생성할 수 있도록 기능을
+제공하고 있습니다</span></font>. (<font face="Cambria"><span lang="zh-CN">예시</span></font>:
+<font face="Cambria"><span lang="zh-CN">블록체인에서 허가된
+다른 노드의 레지스트리</span></font>) <font face="Cambria"><span lang="zh-CN">이
+프로세스는 현재 운영자가 키 쌍을 생성한 다음 수동으로
+화이트리스트에 추가하는 것입니다</span></font>. 
+</p>
+<h2 class="western"><font face=""><span lang="zh-CN">프라이빗 키
+저장 알고리즘</span></font></h2>
+<p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%">
+<font face="Cambria"><span lang="zh-CN">프라이빗 키를 관리하는
+방법은 아래와 같습니다</span></font>. 1. <font face="Cambria"><span lang="zh-CN">패스워드
+</span></font>P <font face="Cambria"><span lang="zh-CN">부여 </span></font>2.
+<font face="Cambria"><span lang="zh-CN">임의의 </span></font>Argon2i
+<font face="Cambria"><span lang="zh-CN">논스 생성 </span></font>3.
+<font face="Cambria"><span lang="zh-CN">임의의 </span></font>NaCl
+<font face="Cambria"><span lang="zh-CN">시크릿박스 논스 생성
+ </span></font>4. 32<font face="Cambria"><span lang="zh-CN">바이트
+마스터키</span></font>(MK)<font face="Cambria"><span lang="zh-CN">에
+</span></font>Argon2i (<font face="Cambria"><span lang="zh-CN">및
+</span></font>Argon2i nonce)<font face="Cambria"><span lang="zh-CN">를
+사용하여 </span></font>P <font face="Cambria"><span lang="zh-CN">늘림
+</span></font>5. <font face="Cambria"><span lang="zh-CN">시크릿박스
+논스 및 </span></font>Argon2<font face="Cambria"><span lang="zh-CN">로
+늘린 마스터키를 이용하여 시크릿박스의 프라이빗 키
+암호화</span></font></p>
+</body>
+</html>

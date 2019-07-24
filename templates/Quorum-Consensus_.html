@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.2.5.2 (MacOSX)"/>
+	<meta name="created" content="2019-06-21T07:51:00"/>
+	<meta name="changed" content="00:00:00"/>
+	<style type="text/css">
+		@page { size: 8.5in 11in; margin: 1in }
+		p { margin-bottom: 0.1in; direction: ltr; line-height: 115%; text-align: left; orphans: 2; widows: 2; background: transparent }
+		a:link { color: #000080; so-language: zxx; text-decoration: underline }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%">
+<font face="Cambria"><span lang="zh-CN">허가형 네트워크에서는
+불필요하게 해시 파워가 낭비되는 작업 증명</span></font>(PoW,
+Proof-of-Work)<font face="Cambria"><span lang="zh-CN">나 지분
+증명</span></font>(PoS, Proof-of-Stake) <font face="Cambria"><span lang="zh-CN">방식을
+사용할 필요가 없습니다</span></font>. <font face="Cambria"><span lang="zh-CN">그렇기
+때문에 </span></font>Quorum<font face="Cambria"><span lang="zh-CN">은
+컨소시엄 체인</span></font>(<font face="Cambria"><span lang="zh-CN">허가형
+네트워크</span></font>)<font face="Cambria"><span lang="zh-CN">에
+보다 적합한 다음과 같은 합의 메커니즘을 제공합니다</span></font>:</p>
+<p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%">
+*<b>Raft </b><font face="Cambria"><span lang="zh-CN"><b>합의 알고리즘</b></span></font>:
+<font face="Cambria"><span lang="zh-CN">빠른 블록
+생성시간</span></font>(blocktimes)<font face="Cambria"><span lang="zh-CN">과
+거래 완결성</span></font>(transaction finality)<font face="Cambria"><span lang="zh-CN">을
+가지며</span></font>, <font face="Cambria"><span lang="zh-CN">요청이
+들어오는 경우에만 블록을 생성하는 합의 모델입니다</span></font>.
+<font face="Cambria"><span lang="zh-CN">자세한 내용은
+<a href="https://github.com/jpmorganchase/quorum/blob/master/docs/Consensus/raft.md"><font color="#1155cc"><u>이더리움</a></font></u></span></font><a href="https://github.com/jpmorganchase/quorum/blob/master/docs/Consensus/raft.md"><font color="#1155cc"><u>/Quorum<font face="Cambria"><span lang="zh-CN">을
+위한 </span></font>Raft <font face="Cambria"><span lang="zh-CN">알고리즘</u></font></a>에서
+확인하세요</span></font>. <br/>
+*<font face="Cambria"><span lang="zh-CN"><b>이스탄불
+</b></span></font><b>BFT (Byzantine Fault Tolerance) </b><font face="Cambria"><span lang="zh-CN"><b>합의
+알고리즘</b></span></font>: PBFT(Practical Byzantine Fault
+Tolerance)<font face="Cambria"><span lang="zh-CN">에서 영감을 받아
+ </span></font>AMIS<font face="Cambria"><span lang="zh-CN">에서 구현한
+거래 완결성을 지닌 합의 알고리즘입니다</span></font>.
+<font face="Cambria"><span lang="zh-CN">자세한 내용은 <font color="#1155cc"><u>이스탄불
+</font></u></span></font><font color="#1155cc"><u>BFT <font face="Cambria"><span lang="zh-CN">합의
+알고리즘</u></font></span></font>, <a href="https://github.com/getamis/go-ethereum/wiki/RPC-API"><font color="#0000ff"><u>RPC
+API</u></font></a>, <font face="Cambria"><span lang="zh-CN"><a href="https://medium.com/getamis/istanbul-bft-ibft-c2758b7fe6ff"><font color="#1155cc"><u>본
+기술 문서</u></font></a>에서 확인하세요</span></font>. 
+</p>
+<p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%"><a name="_heading=h.gjdgxs"></a>
+* <font face="Cambria"><span lang="zh-CN"><b>클릭 </b></span></font><b>POA</b>(<b>Clique
+Proof-of-Authority) </b><font face="Cambria"><span lang="zh-CN"><b>합의
+알고리즘</b></span></font>: Go-ethereum(Geth)<font face="Cambria"><span lang="zh-CN">에서
+기본적으로 제공하는 권위 증명</span></font>(PoA) <font face="Cambria"><span lang="zh-CN">합의
+알고리즘입니다</span></font>. <font face="Cambria"><span lang="zh-CN">자세한
+내용은  <a href="https://github.com/ethereum/EIPs/issues/225"><font color="#1155cc"><u>클릭
+</a></font></u></span></font><a href="https://github.com/ethereum/EIPs/issues/225"><font color="#1155cc"><u>PoA
+<font face="Cambria"><span lang="zh-CN">합의 알고리즘</u></font></a></span></font>,
+<font color="#0000ff"><u><a href="https://blog.ethereum.org/2017/04/14/geth-1-6-puppeth-master/">puppeth</a>,</u></font>
+<font face="Cambria"><span lang="zh-CN"><a href="https://hackernoon.com/hands-on-creating-your-own-local-private-geth-node-beginner-friendly-3d45902cc612/"><font color="#1155cc"><u>클릭</span></font>(clique)
+json <font face="Cambria"><span lang="zh-CN">셋업 가이드</u></font></a>를
+확인해보세요</span></font>.</p>
+</body>
+</html>

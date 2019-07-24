@@ -1,0 +1,590 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.2.5.2 (MacOSX)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="00:00:00"/>
+	<style type="text/css">
+		@page { size: 8.5in 11in; margin: 1in }
+		p { margin-bottom: 0.1in; direction: ltr; line-height: 115%; text-align: left; orphans: 2; widows: 2; background: transparent }
+		h1 { margin-top: 0.38in; margin-bottom: 0.13in; direction: ltr; line-height: 100%; text-align: left; orphans: 2; widows: 2; background: transparent }
+		h1.western { font-family: "Calibri", serif; font-size: 18pt; font-weight: bold }
+		h1.cjk { font-family: "Calibri"; font-size: 18pt; font-weight: bold }
+		h1.ctl { font-family: "Calibri"; font-size: 18pt }
+		h2 { margin-top: 0.33in; margin-bottom: 0.11in; direction: ltr; line-height: 100%; text-align: left; orphans: 2; widows: 2; background: transparent }
+		h2.western { font-family: "Calibri", serif; font-size: 16pt; font-weight: bold }
+		h2.cjk { font-family: "Calibri"; font-size: 16pt; font-weight: bold }
+		h2.ctl { font-family: "Calibri"; font-size: 16pt }
+		h3 { margin-top: 0.27in; margin-bottom: 0.09in; direction: ltr; line-height: 100%; text-align: left; orphans: 2; widows: 2; background: transparent }
+		h3.western { font-family: "Calibri", serif; font-size: 13pt; font-weight: bold }
+		h3.cjk { font-family: "Calibri"; font-size: 13pt; font-weight: bold }
+		h3.ctl { font-family: "Calibri"; font-size: 13pt }
+		a:link { color: #000080; so-language: zxx; text-decoration: underline }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><h1 class="western">
+<font face="Calibri"><span lang="zh-CN">기초부터 시작하기 </span></font>
+</h1>
+<h2 class="western">Raft <font face="Calibri"><span lang="zh-CN">합의
+알고리즘의 쿼럼</span></font></h2>
+<ol>
+	<li><p style="margin-bottom: 0in; line-height: 100%">[[<font face="Cambria"><span lang="zh-CN">셋업하기</span></font>|<font face="Cambria"><span lang="zh-CN">셋업하기</span></font>]]
+	<font face="Cambria"><span lang="zh-CN">섹션에서 설명하는대로
+	</span></font>Quorum<font face="Cambria"><span lang="zh-CN">을
+	빌딩하십시오</span></font>. PATH<font face="Cambria"><span lang="zh-CN">에
+	</span></font>geth<font face="Cambria"><span lang="zh-CN">와
+	</span></font>bootnode<font face="Cambria"><span lang="zh-CN">가
+	있는지 확인하십시오</span></font>.</p>
+	<li><p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">새
+	노드의 기반이 될 작업 디렉토리를 만들고 변경하십시오</span></font>.</p>
+	<li><p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">이
+	노드를 위해 </span></font>geth<font face="Cambria"><span lang="zh-CN">를
+	사용하여 한 개 이상의 계정을 만들고 </span></font>(<font face="Consolas, serif">--datadir
+	new-node-1 account new) </font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">계정
+	주소를 제거하십시오</font></span></font><font face="Consolas, serif">.
+	</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">하고자
+	하는 것에 따라 자금이 있는 계좌가 필요할 수 있습니다</font></span></font><font face="Consolas, serif">.
+	</font>
+	</p>
+	<li><p style="margin-bottom: 0in; line-height: 100%"><font face="Consolas, serif">genesis.json
+	</font><font face="Cambria"><span lang="zh-CN">파일을 만드십시오</span></font>.
+	 <font face="Cambria"><span lang="zh-CN"><a href="https://github.com/jpmorganchase/quorum-examples/blob/master/examples/7nodes/genesis.json"><font color="#1155cc"><u>여기</u></font></a>에
+	예제가 있습니다</span></font>. <font face="Cambria"><span lang="zh-CN">이전
+	단계에서 생성한 계정으로 </span></font><font face="Consolas, serif">alloc</font>
+	<font face="Cambria"><span lang="zh-CN">필드를 미리 입력해야
+	합니다</span></font>. 
+	</p>
+	<li><p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">노드
+	키 </span></font>bootnode <font face="Cambria"><span lang="zh-CN">생성
+	</span></font>(<font face="Consolas, serif">--genkey=nodekey)</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">하</font>고
+	</span></font>datadir<font face="Cambria"><span lang="zh-CN">에 복사</span></font></p>
+	<li><p style="margin-bottom: 0in; line-height: 100%"><font face="Consolas, serif">bootnode
+	--nodekey=new-node-1/nodekey --writeaddress </font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">를
+	실행하고 표시된 아웃풋을 기록하십시오</font></span></font><font face="Consolas, serif">.
+	</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">이것은
+	새로운 노드의 </font></span></font><font face="Consolas, serif">enode
+	</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">아이디입니다</font></span></font><font face="Consolas, serif">.
+	</font>
+	</p>
+	<li><p style="margin-bottom: 0in; line-height: 100%"><font face="Consolas, serif">static-nodes.json</font><font face="Cambria"><span lang="zh-CN">라는
+	파일을 만들고 <a href="https://github.com/jpmorganchase/quorum-examples/blob/master/examples/7nodes/permissioned-nodes.json"><font color="#1155cc"><u>예제</u></font></a>와
+	일치하도록 편집하십시오</span></font>. <font face="Cambria"><span lang="zh-CN">파일에는
+	</span></font>enode id<font face="Cambria"><span lang="zh-CN">오</span></font>devp2p
+	<font face="Cambria"><span lang="zh-CN">및 </span></font>raft<font face="Cambria"><span lang="zh-CN">에
+	사용할 포트가 있는 노드에 대한 라인이 하나 있어야
+	합니다</span></font>. <font face="Cambria"><span lang="zh-CN">이
+	파일이 노드 데이터 디렉토리에 있는지 확인하십시오</span></font>.
+		</p>
+	<li><p style="margin-bottom: 0in; line-height: 100%">geth<font face="Cambria"><span lang="zh-CN">로
+	새로운 노드를 초기화하십시오  </span></font><font face="Consolas, serif">--datadir
+	new-node-1 init genesis.json</font></p>
+	<li><p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">노드를
+	시작하고 다음을 통해 백그라운드로 보내십시오</span></font>.
+	<font face="Consolas, serif">PRIVATE_CONFIG=ignore nohup geth
+	--datadir new-node-1 --nodiscover --verbosity 5 --networkid 31337
+	--raft --raftport 50000 --rpc --rpcaddr 0.0.0.0 --rpcport 22000
+	--rpcapi
+	admin,db,eth,debug,miner,net,shh,txpool,personal,web3,quorum,raft
+	--emitcheckpoints --port 21000 2&gt;&gt;node.log &amp;</font></p>
+</ol>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%">
+<font face="Cambria"><span lang="zh-CN">당신의 노드는 이제 작동
+가능하며 </span></font><font face="Consolas, serif">geth attach
+new-node-1/geth.ipc</font><font face="Cambria"><span lang="zh-CN">를
+연결할 수 있습니다</span></font>. <font face="Cambria"><span lang="zh-CN">이
+구성은 프리픽스 </span></font><font face="Consolas, serif">PRIVATE_CONFIG=ignore</font><font face="Cambria"><span lang="zh-CN">에서
+확인할 수 있는 것처럼 프라이버시 서포트 없이
+</span></font>Quorum<font face="Cambria"><span lang="zh-CN">을
+시작합니다</span></font>.  [[<font face="Cambria"><span lang="zh-CN">프라이버시
+트랜잭션 매니저로 프라이버시 지원
+방법</span></font>|<font face="Cambria"><span lang="zh-CN">기초부터</span></font>#adding-privacy-transaction-manager]]
+<font face="Cambria"><span lang="zh-CN">섹션을 참조하십시오</span></font>.</p>
+<h3 class="western"><font face="Calibri"><span lang="zh-CN">노드
+추가하기</span></font></h3>
+<ol>
+	<li><p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">앞의
+	가이드의 </span></font>1, 2, 5, 6<font face="Cambria"><span lang="zh-CN">단계를
+	완료하십시오</span></font>.</p>
+	<li><p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">현재
+	체인인 </span></font><font face="Consolas, serif">genesis.json</font>
+	<font face="Cambria"><span lang="zh-CN">및 </span></font><font face="Consolas, serif">static-nodes.json.json</font><font face="Cambria"><span lang="zh-CN">를
+	회수하십시오</span></font>.<font face="Consolas, serif">
+	static-nodes.json</font> <font face="Cambria"><span lang="zh-CN">은
+	노드 </span></font>data dir<font face="Cambria"><span lang="zh-CN">에
+	배치되어야 합니다</span></font>. 
+	</p>
+	<li><p style="margin-bottom: 0in; line-height: 100%">geth<font face="Cambria"><span lang="zh-CN">로
+	새로운 노드를 초기화 하십시오  </span></font><font face="Consolas, serif">--datadir
+	new-node-2 init genesis.json</font></p>
+	<li><p style="margin-bottom: 0in; line-height: 100%"><font face="Consolas, serif">static-nodes.json</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">을
+	편집하고 구성중인 새 노드에 대한 새로운 항목을
+	추가하십시오 </font></span></font><font face="Consolas, serif">(</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">마지막에
+	있어야 함</font></span></font><font face="Consolas, serif">)</font></p>
+	<li><p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">이미
+	실행중인 체인 노드에 연결하고 실행합니다</span></font>.
+		</p>
+	<li><p style="margin-bottom: 0in; line-height: 100%"><font face="Consolas, serif">raft.addPeer('enode://new-nodes-enode-address-from-step-6-of-the-above@127.0.0.1:21001?discport=0&amp;raftport=50001')</font></p>
+	<li><p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">노드를
+	시작하고 다음을 통해 백그라운드로 보내십시오</span></font>.
+	<font face="Consolas, serif">PRIVATE_CONFIG=ignore nohup geth
+	--datadir new-node-2 --nodiscover --verbosity 5 --networkid 31337
+	--raft --raftport 50001 --raftjoinexisting RAFT_ID --rpc --rpcaddr
+	0.0.0.0 --rpcport 22001 --rpcapi
+	admin,db,eth,debug,miner,net,shh,txpool,personal,web3,quorum,raft
+	--emitcheckpoints --port 21001 2&gt;&gt;node.log &amp;</font>. <font face="Cambria"><span lang="zh-CN">여기서
+	</span></font>RAFT_ID<font face="Cambria"><span lang="zh-CN">는
+	</span></font>5<font face="Cambria"><span lang="zh-CN">단계의 
+	</span></font><font face="Consolas, serif">raft.addPeer() </font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">커맨드에
+	대한 응답입니다</font></span></font><font face="Consolas, serif">.
+	</font>
+	</p>
+	<li><p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">옵션</span></font>:
+	<font face="Cambria"><span lang="zh-CN">다른 모든 체인 참여자들과
+	새로운 </span></font><font face="Consolas, serif">static-nodes.json</font><font face="Cambria"><span lang="zh-CN">를
+	공유합니다</span></font>.<font face="Consolas, serif"> </font>
+	</p>
+</ol>
+<p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%">
+<font face="Cambria"><span lang="zh-CN">추가 노드는 이제
+작동가능하며 이전에 설정된 노드와 동일한 체인의
+일부입니다</span></font>. 
+</p>
+<h3 class="western"><font face="Calibri"><span lang="zh-CN">노드 제거</span></font></h3>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">체인의
+이미 실행중인 노드에 연결하고 </span></font><font face="Consolas, serif">raft.cluster</font><font face="Cambria"><span lang="zh-CN">를
+실행하여 제거해야 하는 노드에 해당하는 </span></font>RAFT_ID<font face="Cambria"><span lang="zh-CN">를
+가져옵니다</span></font>. 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Consolas, serif">raft.removePeer(RAFT_ID)</font><font face="Cambria"><span lang="zh-CN">를
+실행하십시오</span></font>. 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">제거된
+노드에 해당하는 </span></font>geth <font face="Cambria"><span lang="zh-CN">프로세스를
+중지하십시오</span></font>. 
+</p>
+<h2 class="western"><font face="Calibri"><span lang="zh-CN">이스탄불
+</span></font>BFT <font face="Calibri"><span lang="zh-CN">합의
+알고리즘의 </span></font>Quorum</h2>
+<p style="margin-bottom: 0in; line-height: 100%">[[<font face="Cambria"><span lang="zh-CN">셋업하기</span></font>|<font face="Cambria"><span lang="zh-CN">셋업하기</span></font>]]<font face="Cambria"><span lang="zh-CN">에서
+설명한대로 </span></font>Quorum<font face="Cambria"><span lang="zh-CN">을
+빌딩하십시오</span></font>. PATH<font face="Cambria"><span lang="zh-CN">에
+</span></font>geth<font face="Cambria"><span lang="zh-CN">와
+</span></font>bootnode<font face="Cambria"><span lang="zh-CN">가 있는지
+확인하십시오</span></font>. 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><a href="https://github.com/jpmorganchase/istanbul-tools"><font color="#0000ff"><u>istanbul-tools</u></font></a>
+<font face="Cambria"><span lang="zh-CN">를 설치하고 </span></font>PAT<font face="Cambria"><span lang="zh-CN">에
+이스탄불 바이너리를 넣으세요</span></font>. 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">X<font face="Cambria"><span lang="zh-CN">개의
+초기 유효성 검사기 노드 각각에 대한 작업 디렉토리를
+만듭니다</span></font>. 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">노드의
+작업 디렉토리 중 선두에 있는</span></font>(<font face="Cambria"><span lang="zh-CN">선두라고
+생각하는 것</span></font>)  <font face="Cambria"><span lang="zh-CN">노드로
+변경하고 </span></font><font face="Consolas, serif">istanbul
+setup</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">을
+실행하여 </font></span></font><font face="Consolas, serif">X </font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">초기
+유효성 검사 노드를 위한 셋업 파일들을 생성합니다</font></span></font><font face="Consolas, serif">.
+setup --num X --nodes --quorum --save --verbose </font><font face="Cambria"><span lang="zh-CN"><b>이
+명령은 </b></span></font><b>X</b><font face="Cambria"><span lang="zh-CN"><b>번이
+아니라 한 번만 실행합니다</b></span></font><b>. </b><font face="Cambria"><span lang="zh-CN">이
+커맨드는 </span></font>0<font face="Cambria"><span lang="zh-CN">에서
+</span></font>X-1<font face="Cambria"><span lang="zh-CN">까지의
+번호가 지정된 디렉토리에 있는 모든 초기 유효성
+검사기 노드에 대해 </span></font><font face="Consolas, serif">tatic-nodes.json</font>,
+<font face="Consolas, serif">genesis.json</font>, <font face="Cambria"><span lang="zh-CN">및
+</span></font>nodekeys<font face="Cambria"><span lang="zh-CN">와 같은
+ 몇 가지 항목을 생성합니다</span></font>. 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">모든
+초기 유효성 검사 노드의 의도된 </span></font>IP <font face="Cambria"><span lang="zh-CN">및
+포트 번호를 포함하도록 </span></font><font face="Consolas, serif">static-nodes.json</font><font face="Cambria"><span lang="zh-CN">을
+갱신하십시오</span></font>.<font face="Consolas, serif">
+static-nodes.json</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">에서는
+각 노드마다 다른 행이 표시됩니다</font></span></font><font face="Consolas, serif">.
+</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">설치
+가이드의 나머지 부분에서 </font></span></font><font face="Consolas, serif">Y</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">행은
+</font></span></font><font face="Consolas, serif">Y</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">노드를
+말하고 행 </font></span></font><font face="Consolas, serif">1</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">은
+리드 노드에 해당한다고 가정합니다</font></span></font><font face="Consolas, serif">.
+</font>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">각
+노드의 작업 디렉토리에서 </span></font><font face="Consolas, serif">data</font><font face="Cambria"><span lang="zh-CN">라는
+데이터 디렉토리를 만들고 </span></font><font face="Consolas, serif">data
+</font><font face="Cambria"><span lang="zh-CN">내부에는 </span></font>geth
+<font face="Cambria"><span lang="zh-CN">디렉토리를 생성합니다</span></font>.
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">이제
+필요한 노드의 작업 디렉토리에서 </span></font><font face="Consolas, serif">--datadir
+data account</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">를
+실행하여 모든 노드에 대한 초기 계정을 생성합니다</font></span></font><font face="Consolas, serif">.
+</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">결과적으로
+터미널에 나타난 퍼블릭 계정 주소를 기록해야 합니다</font></span></font><font face="Consolas, serif">.
+</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">필요한
+만큼 이를 반복하십시오</font></span></font><font face="Consolas, serif">.
+</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">하고자
+하는 바에 따라 자금이 있는 계좌가 필요할 수 있습니다</font></span></font><font face="Consolas, serif">.
+ </font>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">초기
+블록에 계정을 추가하려면 리드 노드의 작업 디렉토리에서
+</span></font><font face="Consolas, serif">genesis.json</font><font face="Cambria"><span lang="zh-CN">파일을
+편집하고 이전 단계에서 생성된 계정으로  </span></font><font face="Consolas, serif">alloc</font>
+<font face="Cambria"><span lang="zh-CN">필드를 업데이트 하십시오</span></font>.<font face="Consolas, serif">
+</font>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">다음으로
+현재 리드 노드의 작업 디렉토리에 있는 파트 </span></font>4<font face="Cambria"><span lang="zh-CN">에서
+생성된 파일을 다른 모든 노드에 배포해야 합니다</span></font>.
+<font face="Cambria"><span lang="zh-CN">이렇게 하려면
+</span></font><font face="Consolas, serif">genesis.json</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">을
+모든 노드의 작업 디렉토리에 두고 각 노드의 데이터
+폴더에 </font></span></font><font face="Consolas, serif">static-nodes.json</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">을
+놓고 </font></span></font><font face="Consolas, serif">X/nodekey</font>
+<font face="Cambria"><span lang="zh-CN">를 </span></font>(X-1)<font face="Cambria"><span lang="zh-CN">의
+</span></font><font face="Consolas, serif">data/geth </font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">디렉토리에
+위치시킵니다</font></span></font><font face="Consolas, serif">.
+</font>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">리드노드의
+작업 디렉토리로 전환하고 </span></font><font face="Consolas, serif">geth
+--datadir data init genesis.json</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">으로
+초기화하십시오</font></span></font><font face="Consolas, serif">.
+3</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">단계에서
+생성된 모든 작업 디렉토리 </font></span></font><font face="Consolas, serif">X</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">에
+대해 반복하십시오</font></span></font><font face="Consolas, serif">.
+geth init</font><font face="Cambria"><span lang="zh-CN"><i>을 실행하여
+얻은 해시는 모든 노드와 일치해야 합니다</i></span></font><i>.
+</i>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">모든
+노드를 시작하고 다음을 통해  백그라운드로 보냅니다</span></font>:
+<font face="Consolas, serif">PRIVATE_CONFIG=ignore nohup geth
+--datadir data --permissioned --nodiscover --istanbul.blockperiod 5
+--syncmode full --mine --minerthreads 1 --verbosity 5 --networkid 10
+--rpc --rpcaddr 0.0.0.0 --rpcport YOUR_NODES_RPC_PORT_NUMBER --rpcapi
+admin,db,eth,debug,miner,net,shh,txpool,personal,web3,quorum,istanbul
+--emitcheckpoints --port YOUR_NODES_PORT_NUMBER 2&gt;&gt;node.log </font>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN"><font face="Consolas">그리고
+</font></span></font><font face="Consolas, serif">YOUR_NODES_RPC_PORT_NUMBER</font>
+<font face="Cambria"><span lang="zh-CN">및 </span></font><font face="Consolas, serif">YOUR_NODES_PORT_NUMBER</font><font face="Cambria"><span lang="zh-CN">을
+노드의 지정된 포트 번호로 바꾸십시오</span></font>.
+<font face="Consolas, serif">YOUR_NODES_PORT_NUMBER</font><font face="Cambria"><span lang="zh-CN">은
+파트 </span></font>5<font face="Cambria"><span lang="zh-CN">에서
+결정된 이 노드의 포트 번호와 일치해야 합니다</span></font>.
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">이제
+노드가 작동하며 </span></font><font face="Consolas, serif">geth
+attach data/geth.ipc</font><font face="Cambria"><span lang="zh-CN">를
+연결할  있습니다</span></font>. <font face="Cambria"><span lang="zh-CN">이
+구성은 프리픽스 </span></font><font face="Consolas, serif">PRIVATE_CONFIG=ignore</font><font face="Cambria"><span lang="zh-CN">에서
+확인할 수 있는 것처럼 프라이버시 지원이 없는 쿼럼을
+시작합니다</span></font>. <font face="Cambria"><span lang="zh-CN">하단의
+</span></font>[[<font face="Cambria"><span lang="zh-CN">프라이버시
+트랜잭션 매니저를 이용한 프라이버시 지원 방법</span></font>|<font face="Cambria"><span lang="zh-CN">기초부터
+시작하기</span></font>#<font face="Cambria"><span lang="zh-CN">프라이버시</span></font>-<font face="Cambria"><span lang="zh-CN">트랜잭션</span></font>-<font face="Cambria"><span lang="zh-CN">매니저
+추가하기</span></font>]] <font face="Cambria"><span lang="zh-CN">섹션을
+참조하십시오</span></font>. 
+</p>
+<p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%">
+<font face="Cambria"><span lang="zh-CN">이스탄불 툴은 </span></font>X<font face="Cambria"><span lang="zh-CN">개의
+노드를 생성하는데 사용될 수 있으며 자세한 정보는
+</span></font><a href="https://github.com/jpmorganchase/istanbul-tools"><font color="#0000ff"><u>docs</u></font></a><font face="Cambria"><span lang="zh-CN">에서
+확인할 수 있습니다</span></font>. 
+</p>
+<h3 class="western"><font face="Calibri"><span lang="zh-CN">검증자</span></font>(Validator)
+<font face="Calibri"><span lang="zh-CN">추가하기</span></font></h3>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">추가해야
+할 새로운 노드의 작업 디렉토리를 만듭니다</span></font>.
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">새
+노드의 작업 디렉토리로 변경하고 </span></font><font face="Consolas, serif">istanbul
+setup --num 1 --verbose --quorum --save</font><font face="Cambria"><span lang="zh-CN">를
+실행합니다</span></font>. <font face="Cambria"><span lang="zh-CN">그러면
+</span></font>Address, NodeInfo <font face="Cambria"><span lang="zh-CN">및
+</span></font>genesis.json<font face="Cambria"><span lang="zh-CN">을
+포함하여 검증자의 세부 정보가 생성됩니다</span></font>.
+<font face="Cambria"><span lang="zh-CN">검증자의 주소를 복사하고
+현재 검증자의 절반 이상에서 </span></font><font face="Consolas, serif">istanbul.propose(&lt;address&gt;,
+true)</font><font face="Cambria"><span lang="zh-CN">를 실행합니다</span></font>.
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Consolas, serif">istanbul.getValidators()</font><font face="Cambria"><span lang="zh-CN">를
+실행하여 새로운 검증자가 검증자 목록에 추가되었는지
+확인합니다</span></font>. 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">[[<font face="Cambria"><span lang="zh-CN">셋업하기</span></font>|<font face="Cambria"><span lang="zh-CN">셋업하기</span></font>]]
+<font face="Cambria"><span lang="zh-CN">섹션에서 설명한대로
+</span></font>Quorum<font face="Cambria"><span lang="zh-CN">을
+빌딩하십시오</span></font>. PATH<font face="Cambria"><span lang="zh-CN">에
+</span></font>geth<font face="Cambria"><span lang="zh-CN">가 있는지
+확인하십시오</span></font>. <font face="Cambria"><span lang="zh-CN">기존
+체인에서 </span></font><font face="Consolas, serif">static-nodes.json</font>
+<font face="Cambria"><span lang="zh-CN">및 </span></font>genesis.json<font face="Cambria"><span lang="zh-CN">을
+복사하십시오</span></font>. <font face="Consolas, serif">static-nodes.json</font><font face="Cambria"><span lang="zh-CN">은
+새로운 노드  </span></font>data dir<font face="Cambria"><span lang="zh-CN">에
+배치되어야 합니다</span></font>. 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Consolas, serif">static-nodes.json</font><font face="Cambria"><span lang="zh-CN">을
+편집하고 새로운 검증자 노드 정보를 파일의 끝에
+추가하십시오</span></font>. <font face="Cambria"><span lang="zh-CN">새로운
+검증자 노드 정보는 </span></font>2<font face="Cambria"><span lang="zh-CN">단계에서
+실행된 </span></font><font face="Consolas, serif">istanbul setup
+--num 1 --verbose --quorum --save</font> <font face="Cambria"><span lang="zh-CN">커맨드의
+결과물에서 얻을 수 있습니다</span></font>. <font face="Cambria"><span lang="zh-CN">노드
+정보의 </span></font>IP<font face="Cambria"><span lang="zh-CN">주소와
+포트를 사용하고자 하는 검증자와 포트의 </span></font>IP
+<font face="Cambria"><span lang="zh-CN">주소와 일치하도록
+업데이트하십시오</span></font>. 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Consolas, serif">istanbul
+setup</font> <font face="Cambria"><span lang="zh-CN">커맨드로 생성된
+노드키를 작업 디렉토리의 </span></font>geth <font face="Cambria"><span lang="zh-CN">디렉토리에
+복사하십시오</span></font>. 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"> <font face="Consolas, serif">geth
+--datadir new-node-1 account new</font><font face="Cambria"><span lang="zh-CN">를
+사용하여 이 노드에 대해 하나 이상의 계정을 생성하고
+계정 주소를 제거하십시오</span></font>. 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Consolas, serif">geth
+--datadir new-node-1 init genesis.json</font><font face="Cambria"><span lang="zh-CN">를
+사용하여 새로운 노드를 초기화하십시오</span></font>.
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">노드를
+시작하고 </span></font><font face="Consolas, serif">PRIVATE_CONFIG=ignore
+nohup geth --datadir data --permissioned --nodiscover
+--istanbul.blockperiod 5 --syncmode full --mine --minerthreads 1
+--verbosity 5 --networkid 10 --rpc --rpcaddr 0.0.0.0 --rpcport
+YOUR_NODES_RPC_PORT_NUMBER --rpcapi
+admin,db,eth,debug,miner,net,shh,txpool,personal,web3,quorum,istanbul
+--emitcheckpoints --port YOUR_NODES_PORT_NUMBER 2&gt;&gt;node.log</font><font face="Cambria"><span lang="zh-CN">를
+이용하여 백그라운드로 보내십시오</span></font>. <font face="Cambria"><span lang="zh-CN">그리고
+</span></font><font face="Consolas, serif">YOUR_NODES_RPC_PORT_NUMBER</font>
+<font face="Cambria"><span lang="zh-CN">및 </span></font><font face="Consolas, serif">YOUR_NODES_PORT_NUMBER</font><font face="Cambria"><span lang="zh-CN">를
+지정된 포트 번호로 바꾸십시오</span></font>.
+<font face="Consolas, serif">YOUR_NODES_PORT_NUMBER</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">은
+</font>파트 </span></font>7<font face="Cambria"><span lang="zh-CN">에서
+결정된 이 노드의 포트 번호와 일치해야 합니다</span></font>.</p>
+<h3 class="western"><font face="Calibri"><span lang="zh-CN">검증자
+제거하기</span></font></h3>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">실행중인
+검증자에 연결하고 </span></font><font face="Consolas, serif">istanbul.getValidators()</font><font face="Cambria"><span lang="zh-CN">를
+실행하고 제거해야하는 검증자의 주소를 확인하십시오</span></font>.
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">현
+검증자의 절반 이상에서 제거해야 하는 검증자의 주소를
+전달하여 </span></font><font face="Consolas, serif">istanbul.propose(&lt;address&gt;,
+false)</font><font face="Cambria"><span lang="zh-CN">를 실행하십시오</span></font>.
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Consolas, serif">istanbul.getValidators()</font><font face="Cambria"><span lang="zh-CN">를
+실행하여 검증자가 제거되었는지 확인하십시오</span></font>.
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">제거된
+검증자에 해당하는 </span></font>geth <font face="Cambria"><span lang="zh-CN">프로세스를
+중지하십시오</span></font>. 
+</p>
+<h3 class="western"><font face="Calibri"><span lang="zh-CN">비검증자
+노드 추가하기</span></font></h3>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">추가해야
+할 새로운 노드의 작업 디렉토리를 만드십시오</span></font>.</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">새로운
+노드의 작업 디렉토리로 변경하고 </span></font><font face="Consolas, serif">istanbul
+setup --num 1 --verbose --quorum --save</font><font face="Cambria"><span lang="zh-CN">를
+실행하십시오</span></font>. <font face="Cambria"><span lang="zh-CN">그러면
+</span></font>Address, NodeInfo and genesis.json<font face="Cambria"><span lang="zh-CN">을
+포함한 노드의 세부정보가 생성됩니다</span></font>.  
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">[[<font face="Cambria"><span lang="zh-CN">셋업하기</span></font>|<font face="Cambria"><span lang="zh-CN">셋업하기</span></font>]]
+<font face="Cambria"><span lang="zh-CN">섹션에서 설명한대로
+</span></font>Quorum<font face="Cambria"><span lang="zh-CN">을
+빌딩하십시오</span></font>. PATH<font face="Cambria"><span lang="zh-CN">에
+</span></font>geth<font face="Cambria"><span lang="zh-CN">가 있는지
+확인하십시오</span></font>.</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">기존
+체인에서 </span></font><font face="Consolas, serif">static-nodes.json</font>
+<font face="Cambria"><span lang="zh-CN">및 </span></font>genesis.json<font face="Cambria"><span lang="zh-CN">을
+복사하십시오</span></font>. <font face="Consolas, serif">static-nodes.json</font><font face="Cambria"><span lang="zh-CN">은
+새로운 노드 </span></font>data dir<font face="Cambria"><span lang="zh-CN">에
+배치되어야 합니다</span></font>. 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Consolas, serif">static-nodes.json</font><font face="Cambria"><span lang="zh-CN">을
+편집하고 새로운 노드 정보를 파일의 끝에 추가하십시오</span></font>.
+<font face="Cambria"><span lang="zh-CN">새로운 노드 정보는
+</span></font>2<font face="Cambria"><span lang="zh-CN">단계에서
+실행된 </span></font><font face="Consolas, serif">istanbul setup
+--num 1 --verbose --quorum --save</font> <font face="Cambria"><span lang="zh-CN">커맨드의
+결과물에서 얻을 수 있습니다</span></font>. <font face="Cambria"><span lang="zh-CN">노드
+정보의 </span></font>IP<font face="Cambria"><span lang="zh-CN">주소와
+포트를 사용하고자 하는 검증자와 포트의 </span></font>IP
+<font face="Cambria"><span lang="zh-CN">주소와 일치하도록
+업데이트하십시오</span></font>. 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Consolas, serif">istanbul
+setup</font> <font face="Cambria"><span lang="zh-CN">커맨드로 생성된
+노드키를 작업 디렉토리의 </span></font>geth <font face="Cambria"><span lang="zh-CN">디렉토리에
+복사하십시오</span></font>. 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"> <font face="Consolas, serif">geth
+--datadir new-node-1 account new</font><font face="Cambria"><span lang="zh-CN">를
+사용하여 이 노드에 대해 하나 이상의 계정을 생성하고
+계정 주소를 제거하십시오</span></font>. 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Consolas, serif">geth
+--datadir new-node-1 init genesis.json</font><font face="Cambria"><span lang="zh-CN">를
+사용하여 새로운 노드를 초기화하십시오</span></font>.
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">노드를
+시작하고 </span></font><font face="Consolas, serif">PRIVATE_CONFIG=ignore
+nohup geth --datadir data --permissioned --nodiscover
+--istanbul.blockperiod 5 --syncmode full --verbosity 5 --networkid 10
+--rpc --rpcaddr 0.0.0.0 --rpcport YOUR_NODES_RPC_PORT_NUMBER --rpcapi
+admin,db,eth,debug,net,shh,txpool,personal,web3,quorum,istanbul
+--emitcheckpoints --port YOUR_NODES_PORT_NUMBER 2&gt;&gt;node.log</font><font face="Cambria"><span lang="zh-CN">를
+이용하여 백그라운드로 보내십시오</span></font>. <font face="Cambria"><span lang="zh-CN">그리고
+</span></font><font face="Consolas, serif">YOUR_NODES_RPC_PORT_NUMBER</font>
+<font face="Cambria"><span lang="zh-CN">및 </span></font><font face="Consolas, serif">YOUR_NODES_PORT_NUMBER</font><font face="Cambria"><span lang="zh-CN">를
+지정된 포트 번호로 바꾸십시오</span></font>.
+<font face="Consolas, serif">YOUR_NODES_PORT_NUMBER</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">은
+</font></span></font>5<font face="Cambria"><span lang="zh-CN">단계에서
+결정된 이 노드의 포트 번호와 일치해야 합니다</span></font>.</p>
+<h3 class="western"><font face="Calibri"><span lang="zh-CN">비검증자
+노드 제거하기 </span></font>
+</h3>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">제거해야
+할 노드에 해당하는 </span></font>geth <font face="Cambria"><span lang="zh-CN">프로세스를
+중지하십시오</span></font>. 
+</p>
+<h2 class="western">Clique <font face="Calibri"><span lang="zh-CN">합의
+알고리즘의 </span></font>Quorum</h2>
+<h1 class="western"><font face="Calibri"><span lang="zh-CN">프라이버시
+트랜잭션 매니저 추가하기</span></font></h1>
+<h2 class="western">Tessera</h2>
+<p style="margin-bottom: 0in; line-height: 100%">Quorum<font face="Cambria"><span lang="zh-CN">을
+빌딩하고 </span></font>[[<font face="Cambria"><span lang="zh-CN">셋업하기</span></font>|<font face="Cambria"><span lang="zh-CN">셋업하기</span></font>]]
+<font face="Cambria"><span lang="zh-CN">섹션에서 설명하는 대로
+</span></font><a href="https://github.com/jpmorganchase/tessera/releases"><font color="#0000ff"><u>Tessera</u></font></a><font face="Cambria"><span lang="zh-CN">를
+설치하십시오</span></font>. PATH<font face="Cambria"><span lang="zh-CN">에
+</span></font>geth<font face="Cambria"><span lang="zh-CN">와
+</span></font>bootnode<font face="Cambria"><span lang="zh-CN">가
+포함되어 있는지 확인하십시오</span></font>.  <font face="Consolas, serif">tessera.jar</font>
+<font face="Cambria"><span lang="zh-CN">릴리스 파일의 위치를
+알고 있어야 합니다</span></font>. 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Consolas, serif">java
+-jar /path-to-tessera/tessera.jar -keygen -filename new-node-1</font><font face="Cambria"><span lang="zh-CN">를
+사용하여 새 키들을 생성하십시오</span></font>. 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">새롭게
+생성된 키가 참조된 <a href="https://github.com/jpmorganchase/tessera/wiki/Sample-configuration"><font color="#1155cc"><u>샘플</a></font></u></span></font><a href="https://github.com/jpmorganchase/tessera/wiki/Sample-configuration"><font color="#1155cc"><u>1</u></font></a><font face="Cambria"><span lang="zh-CN">과
+ <a href="https://github.com/jpmorganchase/quorum-examples/blob/master/examples/7nodes/tessera-init.sh"><font color="#1155cc"><u>샘플</a></font></u></span></font><a href="https://github.com/jpmorganchase/quorum-examples/blob/master/examples/7nodes/tessera-init.sh"><font color="#1155cc"><u>2</u></font></a><font face="Cambria"><span lang="zh-CN">를
+참조하여 새로운 구성 파일을 만드십시오</span></font>.
+<font face="Cambria"><span lang="zh-CN">파일 이름을 기록하거나
+이 예제에서와 같이 파일 이름을 </span></font><font face="Consolas, serif">config.json</font><font face="Cambria"><span lang="zh-CN">로
+하십시오</span></font>. 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">tessera <font face="Cambria"><span lang="zh-CN">노드를
+시작하고 </span></font><font face="Consolas, serif">java -jar
+/path-to-tessera/tessera.jar -configfile config.json &gt;&gt;
+tessera.log 2&gt;&amp;1 &amp;</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">를
+통해 백그라운드로 보내십시오</font></span></font><font face="Consolas, serif">.
+</font>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">노드를
+시작하고  </span></font><font face="Consolas, serif">PRIVATE_CONFIG=tm.ipc
+nohup geth --datadir new-node-1 --nodiscover --verbosity 5
+--networkid 31337 --raft --raftport 50000 --rpc --rpcaddr 0.0.0.0
+--rpcport 22000 --rpcapi
+admin,db,eth,debug,miner,net,shh,txpool,personal,web3,quorum,raft
+--emitcheckpoints --port 21000 2&gt;&gt;node.log &amp;</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">를
+통해 백그라운드로 보내십시오</font></span></font><font face="Consolas, serif">.
+</font>
+</p>
+<p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%">
+<font face="Cambria"><span lang="zh-CN">당신의 노드는 이제 작동
+가능하며 </span></font><font face="Consolas, serif">attach
+new-node-1/geth.ipc</font><font face="Cambria"><span lang="zh-CN">를
+통해 연결할 수 있습니다</span></font>. Tessera IPC <font face="Cambria"><span lang="zh-CN">브릿지는
+일반적으로 프리픽스 </span></font><font face="Consolas, serif">PRIVATE_CONFIG=tm.ipc</font><font face="Cambria"><span lang="zh-CN">에
+나와 있는 것처럼  </span></font><font face="Consolas, serif">tm.ipc</font><font face="Cambria"><span lang="zh-CN">라는
+이름으로  </span></font><font face="Consolas, serif">config.json</font><font face="Cambria"><span lang="zh-CN">에
+정의된 파일 이름 위에 있습니다</span></font>. <font face="Cambria"><span lang="zh-CN">이제
+노드가 프라이빗 트랜잭션을 주고 받을 수 있고 퍼블릭
+노드키는 </span></font><font face="Consolas, serif">new-node-1.pub</font>
+<font face="Cambria"><span lang="zh-CN">파일에 있게 됩니다</span></font>.
+Tessera<font face="Cambria"><span lang="zh-CN">는 구성에 있어서
+많은 유연성을 제공합니다</span></font>. <a href="https://github.com/jpmorganchase/tessera/wiki"><font color="#0000ff"><u>Tessera
+wiki</u></font></a><font face="Cambria"><span lang="zh-CN">에서 완벽한
+최신 구성 옵션을 확인하십시오</span></font>.  
+</p>
+<h2 class="western">Constellation</h2>
+<p style="margin-bottom: 0in; line-height: 100%">Quorum<font face="Cambria"><span lang="zh-CN">을
+빌딩하고 </span></font>[[<font face="Cambria"><span lang="zh-CN">셋업하기</span></font>|<font face="Cambria"><span lang="zh-CN">셋업하기</span></font>]]
+<font face="Cambria"><span lang="zh-CN">섹션에서 설명한 바와
+같이 </span></font><a href="https://github.com/jpmorganchase/constellation/releases"><font color="#0000ff"><u>Constellation</u></font></a><font face="Cambria"><span lang="zh-CN">을
+설치하십시오</span></font>. PATH<font face="Cambria"><span lang="zh-CN">에
+</span></font>geth, bootnode <font face="Cambria"><span lang="zh-CN">및
+</span></font>constellation <font face="Cambria"><span lang="zh-CN">노드
+바이너리가 있는지 확인하십시오</span></font>. 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Consolas, serif">constellation-node
+--generatekeys=new-node-1</font><font face="Cambria"><span lang="zh-CN">로
+새로운 키들을 생성하십시오</span></font>. 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">constellation <font face="Cambria"><span lang="zh-CN">노드를
+시작하고 다음을 통해 백그라운드로 보내십시오</span></font>:
+<font face="Consolas, serif">constellation-node
+--url=https://127.0.0.1:9001/ --port=9001 --workdir=. --socket=tm.ipc
+--publickeys=new-node-1.pub --privatekeys=new-node-1.key
+--othernodes=https://127.0.0.1:9001/ &gt;&gt; constellation.log 2&gt;&amp;1
+&amp;</font></p>
+<p style="margin-bottom: 0in; line-height: 100%">Start your node and
+send it into background with <font face="Consolas, serif">PRIVATE_CONFIG=tm.ipc
+nohup geth --datadir new-node-1 --nodiscover --verbosity 5
+--networkid 31337 --raft --raftport 50000 --rpc --rpcaddr 0.0.0.0
+--rpcport 22000 --rpcapi
+admin,db,eth,debug,miner,net,shh,txpool,personal,web3,quorum,raft
+--emitcheckpoints --port 21000 2&gt;&gt;node.log &amp;</font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Cambria"><span lang="zh-CN">당신의
+노드는 이제 작동 가능하며 </span></font><font face="Consolas, serif">attach
+new-node-1/geth.ipc</font><font face="Cambria"><span lang="zh-CN">를
+통해 연결할 수 있습니다</span></font>. Constellation IPC
+bridge<font face="Cambria"><span lang="zh-CN">는 당신의 설정에
+정의된 파일 이름 위에 있을 것입니다</span></font>. <font face="Cambria"><span lang="zh-CN">위의
+</span></font>3<font face="Cambria"><span lang="zh-CN">번 단계에서
+</span></font><font face="Consolas, serif">--socket=file-name.ipc</font>
+<font face="Cambria"><span lang="zh-CN">옵션을 보십시오</span></font>.
+<font face="Cambria"><span lang="zh-CN">이제 노드가 프라이빗
+트랜잭션을 주고 받을 수 있고 퍼블릭 노드키는
+</span></font><font face="Consolas, serif">new-node-1.pub</font> <font face="Cambria"><span lang="zh-CN">파일에
+있게 됩니다</span></font>.</p>
+<h1 class="western"><font face="Calibri"><span lang="zh-CN">허가형
+구성 사용하기 </span></font>
+</h1>
+<p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%">
+Quorum<font face="Cambria"><span lang="zh-CN">은 사용자 지정
+화이트리스트를 기반으로 허가형 시스템을 함께
+제공합니다</span></font>. <font face="Cambria"><span lang="zh-CN">자세한
+설명은 </span></font><a href="https://github.com/jpmorganchase/quorum/wiki/Security#network-permissioning"><font color="#0000ff"><u>Network
+Permissioning</u></font></a><font face="Cambria"><span lang="zh-CN">에서
+확인할 수 있습니다</span></font>. 
+</p>
+</body>
+</html>

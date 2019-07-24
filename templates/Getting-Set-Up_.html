@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.2.5.2 (MacOSX)"/>
+	<meta name="created" content="2019-06-21T07:51:00"/>
+	<meta name="changed" content="00:00:00"/>
+	<style type="text/css">
+		@page { size: 8.5in 11in; margin: 1in }
+		p { margin-bottom: 0.1in; direction: ltr; line-height: 115%; text-align: left; orphans: 2; widows: 2; background: transparent }
+		h2 { margin-top: 0.33in; margin-bottom: 0.11in; direction: ltr; line-height: 140%; text-align: left; orphans: 2; widows: 2; background: transparent }
+		h2.western { font-family: "Calibri", serif; font-size: 16pt; font-weight: bold }
+		h2.cjk { font-family: ; font-size: 16pt; font-weight: bold }
+		h2.ctl { font-family: ; font-size: 16pt; font-weight: bold }
+		a:link { color: #0000ff; text-decoration: underline }
+	</style>
+</head>
+<body lang="en-US" link="#0000ff" vlink="#800000" dir="ltr"><h2 class="western">
+<font face=""><span lang="zh-CN">셋업 및 퀵스타트</span></font></h2>
+<p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%">
+Quorum<font face="Cambria"><span lang="zh-CN">을 사용하기 위해서는
+</span></font>Quorum <font face="Cambria"><span lang="zh-CN">노드와
+</span></font>Constellation/Tessera <font face="Cambria"><span lang="zh-CN">노드를
+설치하고 환경에 맞게 설정한 후 실행되어 있어야
+합니다 </span></font>(<font face="Cambria"><span lang="zh-CN">두
+노드 모두 하단의 구축</span></font>/<font face="Cambria"><span lang="zh-CN">설치
+가이드를 참고하십시오</span></font>).  <font face="Cambria"><span lang="zh-CN">키
+생성</span></font>, <font face="Cambria"><span lang="zh-CN">제네시스
+블록 및  </span></font>Constellation/Tessera <font face="Cambria"><span lang="zh-CN">구성
+등 직접 </span></font>Quorum<font face="Cambria"><span lang="zh-CN">을
+셋업하기 위한 단계별 가이드를 곧 제공할 예정입니다</span></font>.
+<font face="Cambria"><span lang="zh-CN">현재로써 </span></font>Quorum<font face="Cambria"><span lang="zh-CN">을
+시작하기 위한 가장 좋은 방법은 </span></font>Quorum
+Readme<font face="Cambria"><span lang="zh-CN">의 </span></font><a href="https://github.com/jpmorganchase/quorum/#quickstart"><font color="#0000ff"><u>Quickstart</u></font></a>
+<font face="Cambria"><span lang="zh-CN">섹션에서도 설명했다시피
+</span></font><a href="https://github.com/jpmorganchase/quorum-examples"><font color="#0000ff"><u>Quorum
+Examples</u></font></a><font face="Cambria"><span lang="zh-CN">를
+실행하기 위해 만들어진 </span></font>Vagrant <font face="Cambria"><span lang="zh-CN">환경을
+활용하는 것입니다</span></font>. Vagrant <font face="Cambria"><span lang="zh-CN">환경은
+테스트 </span></font>Quorum <font face="Cambria"><span lang="zh-CN">네트워크를
+자동적으로 셋팅하여 단 몇 분 만에 개발 가능한 상태로
+구성하기 때문에 </span></font>Quorum<font face="Cambria"><span lang="zh-CN">을
+처음 사용하고자 할 때 권장드립니다</span></font>. 
+Vagrant<font face="Cambria"><span lang="zh-CN">를 통하여 </span></font>Quorum
+Examples <font face="Cambria"><span lang="zh-CN">을 사용하는 대신
+직접 </span></font>Quorum<font face="Cambria"><span lang="zh-CN">을
+셋업하고 싶다면 아래 내용을 참고해주세요</span></font>.
+(<font face="Cambria"><span lang="zh-CN">참고</span></font>: <font face="Cambria"><span lang="zh-CN">본
+문서화 작업은 진행중입니다</span></font>.)</p>
+<h2 class="western"><font face=""><span lang="zh-CN">소스를 통한
+</span></font>Quorum <font face=""><span lang="zh-CN">노드 빌드</span></font></h2>
+<p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%">
+Github<font face="Cambria"><span lang="zh-CN">에서 소스를 복사하여
+빌드해보세요</span></font>:</p>
+<p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%">
+<font face="Consolas, serif">git clone
+</font><a href="https://github.com/jpmorganchase/quorum.git"><font color="#0000ff"><font face="Consolas, serif"><u>https://github.com/jpmorganchase/quorum.git</u></font></font></a><font face="Consolas, serif"><br/>
+cd
+quorum<br/>
+make all</font></p>
+<p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%">
+<font face="Cambria"><span lang="zh-CN">바이너리 파일은 
+</span></font><font face="Consolas, serif">$REPO_ROOT/build/bin</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">에
+</font><font face="Malgun Gothic">생성됩</font><font face="Consolas">니다</font></span></font>.
+geth<font face="Cambria"><span lang="zh-CN">와 </span></font>bootnode<font face="Cambria"><span lang="zh-CN">를
+쉽게 사용할 수 있도록 해당 폴더를 개인적으로 설정한
+</span></font>PATH<font face="Cambria"><span lang="zh-CN">로 이동하여</span></font>,
+<font face="Cambria"><span lang="zh-CN">바이너리 파일을 기존
+</span></font>PATH(e.g. <font face="Consolas, serif">/usr/local/bin)</font><font face="Cambria"><span lang="zh-CN">에
+복사하십시오</span></font>. 
+</p>
+<p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%">
+<font face="Consolas, serif">~/.bashrc</font> <font face="Cambria"><span lang="zh-CN">혹은
+</span></font><font face="Consolas, serif">~/.bash_aliases</font><font face="Cambria"><span lang="zh-CN"><font face="Consolas">파일에</font>
+ </span></font><font face="Consolas, serif">PATH=$PATH:/path/to/repository/build/bin</font><font face="Cambria"><span lang="zh-CN"><font face="Malgun Gothic">와
+같이 생성한 바이너리 파일의 경로를 설정하면 보다
+편리하게 사용할 수 있습니다</font></span></font><font face="Malgun Gothic, serif">.</font></p>
+<p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%">
+<font face="Cambria"><span lang="zh-CN">테스트를 실행해보세요</span></font>:</p>
+<p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%">
+<font face="Consolas, serif">make test</font></p>
+<h2 class="western">Constellation <font face=""><span lang="zh-CN">설치하기</span></font></h2>
+<p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%"><a name="_heading=h.gjdgxs"></a>
+<a href="https://github.com/jpmorganchase/constellation/releases"><font color="#0000ff"><u>Constellation
+releases <font face="Cambria"><span lang="zh-CN">페이지</u></font></a>에서
+여러분의 플랫폼에 맞는 패키지를 다운로드하신 후</span></font>,
+<font face="Cambria"><span lang="zh-CN">압축을 해제하십시오</span></font>.
+<font face="Cambria"><span lang="zh-CN">압축을 해제하여 나온
+바이너리 파일을 설정한 </span></font>PATH(e.g.
+/usr/local/bin)<font face="Cambria"><span lang="zh-CN">로 이동시키세요</span></font>.
+</p>
+<h2 class="western"><br/>
+<br/>
+
+</h2>
+<h2 class="western">Tessera <font face=""><span lang="zh-CN">설치하기</span></font></h2>
+<p style="margin-top: 0.21in; margin-bottom: 0.21in; line-height: 140%">
+<a href="https://github.com/jpmorganchase/tessera"><font color="#1155cc"><u>Tessera
+<font face="Cambria"><span lang="zh-CN">프로젝트 페이지</u></font></a>에
+나와 있는 설치 가이드를 참고해주세요</span></font>.</p>
+</body>
+</html>

@@ -1,0 +1,282 @@
+---
+layout: minimal
+title: Inbox
+---
+
+<!-- Main dashboard container -->
+<div id="dashboard-wrapper" class="columns is-gapless is-docked">
+    <div id="dashboard-mailbox" class="column is-12">
+
+        <!-- Dashboard Wrapper -->
+        <div class="dashboard-wrapper is-inbox">
+
+            <div class="columns is-gapless">
+                <div class="column">
+                    <!-- Main content -->
+                    <div id="main-dashboard" class="section-wrapper">
+                        <!-- Dashboard content -->
+                        <div id="basic-layout" class="dashboard-columns">
+
+                            <div class="inbox-wrapper">
+                                <div class="wrapper-inner">
+                                    <!--Inbox sidebar-->
+                                    <div class="inbox-sidebar">
+                                        <!-- Header -->
+                                        <div class="header-area">
+                                            <h2 class="inbox-title">Inbox</h2>
+                                            <div class="dropdown inbox-dropdown dropdown-trigger is-right">
+                                                <div>
+                                                    <button class="button">
+                                                        <span class="icon is-small">
+                                                            <i class="sl sl-icon-options"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <div class="dropdown-content">
+                                                        <a class="dropdown-item">
+                                                            <i class="sl sl-icon-refresh"></i>
+                                                            <span>Refresh</span>
+                                                        </a>
+                                                        <hr class="dropdown-divider">
+                                                        <a class="dropdown-item">
+                                                            <i class="sl sl-icon-bell"></i>
+                                                            <span>Notifications</span>
+                                                        </a>
+                                                        <hr class="dropdown-divider">
+                                                        <a class="dropdown-item">
+                                                            <i class="sl sl-icon-people"></i>
+                                                            <span>Invite People</span>
+                                                        </a>
+                                                        <hr class="dropdown-divider">
+                                                        <a class="dropdown-item">
+                                                            <i class="sl sl-icon-settings"></i>
+                                                            <span>Settings</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a class="inbox-action inbox-close-sidebar-mobile">
+                                                <i class="material-icons">close</i>
+                                            </a>
+                                        </div>
+                                        <!--Inner-->
+                                        <div class="sidebar-inner">
+                                            <!--Inner menu-->
+                                            <div class="inner-menu">
+                                                <a class="button compose-button is-fullwidth">Compose</a>
+                                                <div class="inbox-menu">
+                                                    <ul>
+                                                        <li>
+                                                            <a class="is-active">
+                                                                <i class="sl sl-icon-envelope-open"></i>
+                                                                <span>Inbox</span>
+                                                                <span class="tag">24</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a>
+                                                                <i class="sl sl-icon-doc"></i>
+                                                                <span>Drafts</span>
+                                                                <span class="tag">2</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a>
+                                                                <i class="sl sl-icon-paper-plane"></i>
+                                                                <span>Sent</span>
+                                                                <span class="tag">7</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a>
+                                                                <i class="sl sl-icon-trash"></i>
+                                                                <span>Trash</span>
+                                                                <span class="tag">18</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a>
+                                                                <i class="sl sl-icon-ban"></i>
+                                                                <span>Spam</span>
+                                                                <span class="tag">29</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!--Scroll menu-->
+                                            <div class="scroll-menu">
+                                                <div class="title-wrap">
+                                                    <h3>Contacts</h3>
+                                                    <div class="control is-hidden">
+                                                        <input type="text" class="input" placeholder="Search Contacts...">
+                                                        <div class="form-icon">
+                                                            <i class="sl sl-icon-magnifier"></i>
+                                                        </div>
+                                                    </div>
+                                                    <a class="button search-button">
+                                                        <i class="sl sl-icon-magnifier"></i>
+                                                    </a>
+                                                    <a class="button cancel-search-button is-hidden">
+                                                        <i class="material-icons">close</i>
+                                                    </a>
+                                                </div>
+                                                <div class="contact-list has-slimscroll">
+                                                    <!--Contact-->
+                                                    <div class="contact-block">
+                                                        <img src="https://via.placeholder.com/150x150" data-demo-src="assets/images/avatars/sally.jpg" alt="">
+                                                        <div class="contact-meta">
+                                                            <span>Sally Jenkins</span>
+                                                            <span>sallyj@gmail.com</span>
+                                                        </div>
+                                                    </div>
+                                                    <!--Contact-->
+                                                    <div class="contact-block">
+                                                        <img src="https://via.placeholder.com/150x150" data-demo-src="assets/images/avatars/elie.jpg" alt="">
+                                                        <div class="contact-meta">
+                                                            <span>Elie Daniels</span>
+                                                            <span>edaniels@bulkit.io</span>
+                                                        </div>
+                                                    </div>
+                                                    <!--Contact-->
+                                                    <div class="contact-block">
+                                                        <img src="https://via.placeholder.com/150x150" data-demo-src="assets/images/avatars/alan.jpg" alt="">
+                                                        <div class="contact-meta">
+                                                            <span>Alan Maynard</span>
+                                                            <span>alan@bulkit.io</span>
+                                                        </div>
+                                                    </div>
+                                                    <!--Contact-->
+                                                    <div class="contact-block">
+                                                        <img src="https://via.placeholder.com/150x150" data-demo-src="assets/images/avatars/lakisha.jpg" alt="">
+                                                        <div class="contact-meta">
+                                                            <span>Lakisha Williams</span>
+                                                            <span>lakisha@google.com</span>
+                                                        </div>
+                                                    </div>
+                                                    <!--Contact-->
+                                                    <div class="contact-block">
+                                                        <img src="https://via.placeholder.com/150x150" data-demo-src="assets/images/avatars/ray.jpg" alt="">
+                                                        <div class="contact-meta">
+                                                            <span>Ray Stockton</span>
+                                                            <span>ray@bulkit.io</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--Messages list-->
+                                    <div class="inbox-messages">
+                                        <div class="header-area">
+                                            <div class="actions">
+                                                <a class="inbox-action mobile-menu-action">
+                                                    <i class="material-icons">arrow_forward</i>
+                                                </a>
+                                                <a class="inbox-action check-all-action">
+                                                    <i class="sl sl-icon-check"></i>
+                                                </a>
+                                            </div>
+                                            <div class="actions">
+                                                <div class="control inbox-search">
+                                                    <input type="text" class="input is-rounded" placeholder="Search Inbox...">
+                                                    <div class="form-icon">
+                                                        <i class="sl sl-icon-magnifier"></i>
+                                                    </div>
+                                                </div>
+
+                                                <div class="dropdown inbox-dropdown dropdown-trigger is-right">
+                                                    <div>
+                                                        <button class="button">
+                                                            <span class="icon is-small">
+                                                                <i class="sl sl-icon-options"></i>
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="dropdown-menu">
+                                                        <div class="dropdown-content">
+                                                            <a class="dropdown-item">
+                                                                <i class="sl sl-icon-check"></i>
+                                                                <span>Mark all as read</span>
+                                                            </a>
+                                                            <hr class="dropdown-divider">
+                                                            <a class="dropdown-item">
+                                                                <i class="sl sl-icon-ban"></i>
+                                                                <span>Hide read messages</span>
+                                                            </a>
+                                                            <hr class="dropdown-divider">
+                                                            <a class="dropdown-item">
+                                                                <i class="sl sl-icon-clock"></i>
+                                                                <span>Sort by date</span>
+                                                            </a>
+                                                            <hr class="dropdown-divider">
+                                                            <a class="dropdown-item">
+                                                                <i class="sl sl-icon-user"></i>
+                                                                <span>Sort by user</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--Messages-->
+                                        <div class="messages-list has-slimscroll">
+                                            <!--messages list partial-->
+                                            {{> inbox-messages-list}}
+                                        </div>
+                                    </div>
+
+                                    <!--Loader-->
+                                    <div class="inbox-message-overlay">
+                                        <div class="loader is-loading"></div>
+                                    </div>
+
+                                    <!--Message details 1-->
+                                    {{> message-1}}
+
+                                    <!--Message details 2-->
+                                    {{> message-2}}
+
+                                    <!--Message details 3-->
+                                    {{> message-3}}
+
+                                    <!--Message details 4-->
+                                    {{> message-4}}
+
+                                    <!--Message details 5-->
+                                    {{> message-5}}
+
+                                    <!--Message details 6-->
+                                    {{> message-6}}
+
+                                    <!--Message details 7-->
+                                    {{> message-7}}
+
+                                    <!--Message details 8-->
+                                    {{> message-8}}
+
+                                    <!--Message details 9-->
+                                    {{> message-9}}
+
+                                    <!--Message details 10-->
+                                    {{> message-10}}
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /Dashboard content -->
+                    </div>
+                    <!-- /Main content -->
+                </div>
+                <!-- /Main view -->
+            </div>
+        </div>
+        <!-- /Dashboard Wrapper -->
+    </div>
+</div>
+<!-- Main dashboard container -->
+
+
+{{> mailbox-panel}}
