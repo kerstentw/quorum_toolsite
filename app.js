@@ -20,7 +20,7 @@ app.get('/:site_file', (req,res) => {
 
 app.get('/language/:lang', (req,res)=>{
   let lang = req.params.lang;
-  res.send(languageHandler.language(lang));
+  res.send(languageHandler.languageSwitcher(lang));
 })
 
 app.listen(process.env.PORT);
