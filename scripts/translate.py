@@ -48,8 +48,8 @@ LANGS = {
 }
 
 
-ENDPOINT = "https://openapi.naver.com/v1/papago/n2mt"
-
+#ENDPOINT = "https://openapi.naver.com/v1/papago/n2mt"
+ENDPOING = "https://translation.googleapis.com"
 #fields
 SOURCE = "영어"
 TARGET = "한국어"
