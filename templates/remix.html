@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<!--
+		The MIT License (MIT)
+
+		Copyright (c) 2014, 2015, the individual contributors
+
+		Permission is hereby granted, free of charge, to any person obtaining a copy
+		of this software and associated documentation files (the "Software"), to deal
+		in the Software without restriction, including without limitation the rights
+		to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+		copies of the Software, and to permit persons to whom the Software is
+		furnished to do so, subject to the following conditions:
+
+		The above copyright notice and this permission notice shall be included in
+		all copies or substantial portions of the Software.
+
+		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+		IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+		FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+		AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+		THE SOFTWARE.
+		-->
+		<meta http-equiv="X-UA-Compatible" content="chrome=1">
+		<title>Remixos - Cosmos IDE</title>
+		<link rel="stylesheet" id="theme-link"/>
+		<link rel="stylesheet" href="static/css/pygment_trac.css">
+		<link rel="icon" type="x-icon" href="static/img/icon.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<!--Core CSS -->
+		<link rel="stylesheet"  target="_blank" href="static/css/bulma.css">
+		<link rel="stylesheet"  target="_blank" href="static/css/app.css">
+		<link rel="stylesheet"  target="_blank" href="static/css/core_blue.css">
+		<link rel="stylesheet"  target="_blank" href="static/css/icons.min.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-wrapper is-transparent is-static" style="box-shadow: 1 1 1 1">
+				<div class="container">
+						<!-- Brand -->
+						<div class="navbar-brand">
+								<a class="navbar-item"  target="_blank" href="/">
+										<img src="static/img/QLogo.png" alt="">
+										<small>
+											Korea
+										</small>
+								</a>
+								<!-- Responsive toggle -->
+								<div class="custom-burger" data-target="is-static">
+										<a class="responsive-btn"  target="_blank" href="javascript:void(0);">
+												<span class="menu-toggle">
+														<span class="icon-box-toggle">
+																<span class="rotate">
+																		<i class="icon-line-top"></i>
+																		<i class="icon-line-center"></i>
+																		<i class="icon-line-bottom"></i>
+																</span>
+														</span>
+												</span>
+										</a>
+								</div>
+								<!-- /Responsive toggle -->
+						</div>
+
+
+
+						<!-- Navbar menu -->
+						<div id="is-static" class="navbar-menu">
+
+								<!-- Navbar Start -->
+								<div class="navbar-start">
+										<!-- Dropdown -->
+										<div class="navbar-item has-dropdown is-hoverable is-mega is-hidden-mobile">
+											<div class="navbar-link">
+												<div class="button btn-align mega-btn primary-btn">
+													<strong>
+														Start Here
+													</strong>
+												</div>
+											</div>
+												<div class="navbar-dropdown is-megamenu animated prefadeInUp fadeInUp" data-style="width: 18rem;">
+														<div class="mega-inner">
+																<div class="container">
+																		<div class="columns">
+																				<div class="column">
+																						<h2 class="title is-6 is-mega-menu-title">The Basics</h2>
+																						<a class="navbar-item is-flex"  target="_blank" href="Quorum-Overview.html" target="_blank">
+																								<i class="im im-icon-Sidebar-Window"></i>
+																								<div class="navbar-content">
+																										<p>
+																												<small class="color-secondary"><div class="drop_sec1"></div></small>
+																										</p>
+																										<p><div class="drop_sub1"></div></p>
+																								</div>
+																						</a>
+																						<a class="navbar-item is-flex"  target="_blank" href="Getting-Set-Up_.html">
+																								<i class="im im-icon-Time-Window"></i>
+																								<div class="navbar-content">
+																										<p>
+																												<small class="color-secondary"><div class="drop_sec2"></div></small>
+																										</p>
+																										<p><div class="drop_sub2"></div></p>
+																								</div>
+																						</a>
+																						<a class="navbar-item is-flex"  target="_blank" href="Using-Quorum_.html" target="_blank">
+																								<i class="im im-icon-Lock-Window"></i>
+																								<div class="navbar-content">
+																										<p>
+																												<small class="color-secondary"><div class="drop_sec3"></div></small>
+																										</p>
+																										<p><div class="drop_sub3"></div></p>
+																								</div>
+																						</a>
+																				</div>
+																				<div class="column">
+																						<h2 class="title is-6 is-mega-menu-title">More Info</h2>
+																						<a class="navbar-item is-flex"  target="_blank" href="FAQ.html" target="_blank">
+																								<i class="im im-icon-Bar-Chart"></i>
+																								<div class="navbar-content">
+																										<p>
+																												<small class="color-secondary"><div class="drop_sec4"></div></small>
+																										</p>
+																										<p><div class="drop_sub4"></div></p>
+																								</div>
+																						</a>
+																						<a class="navbar-item is-flex"  target="_blank" href="https://terms.naver.com/entry.nhn?docId=4396062&cid=59088&categoryId=59096" target="_blank">
+																								<i class="im im-icon-Financial"></i>
+																								<div class="navbar-content">
+																										<p>
+																												<small class="color-secondary"><div class="drop_sec5"></div></small>
+																										</p>
+																										<p><div class="drop_sub5"></div></p>
+																								</div>
+																						</a>
+																						<a class="navbar-item is-flex"  target="_blank" href="https://github.com/jpmorganchase/quorum/blob/master/docs/Getting%20Started/api.md" target="_blank">
+																								<i class="im im-icon-Bank"></i>
+																								<div class="navbar-content">
+																										<p>
+																												<small class="color-secondary"><div class="drop_sec6"></div></small>
+																										</p>
+																										<p><div class="drop_sub6"></div></p>
+																								</div>
+																						</a>
+																				</div>
+																				<div class="column">
+																						<h2 class="title is-6 is-mega-menu-title">Further Reading</h2>
+																						<a class="navbar-item is-flex"  target="_blank" href="https://github.com/kerstentw/QuorumDocumentation_KR">
+																								<i class="im im-icon-Folder-Archive"></i>
+																								<div class="navbar-content">
+																										<p>
+																												<small class="color-secondary"><div class="drop_sec7"></div></small>
+																										</p>
+																										<p><div class="drop_sub7"></div></p>
+																								</div>
+																						</a>
+																						<a class="navbar-item is-flex"  target="_blank" href="static/files/EnterpriseBlockchain.pdf">
+																								<i class="im im-icon-Mail-Attachement"></i>
+																								<div class="navbar-content">
+																										<p>
+																												<small class="color-secondary"><div class="drop_sec8"></div></small>
+																										</p>
+																										<p><div class="drop_sub8"></div></p>
+																								</div>
+																						</a>
+																				</div>
+																				<div class="column">
+																						<h2 class="title is-6 is-mega-menu-title"><div class="drop_cc_title"></div></h2>
+																						<p class="is-cta"><div class="drop_cc_body"></div></p>
+																						<p class="is-cta">
+																								<a  target="_blank" href="https://github.com/jpmorganchase" class="button btn-align mega-btn secondary-btn" target="_blank">View</a>
+																						</p>
+																				</div>
+																		</div>
+																</div>
+
+																<hr class="navbar-divider">
+																<div class="navbar-item is-footer is-hidden-mobile">
+																		<div class="navbar-content">
+																				<div class="level is-mobile">
+
+
+																				</div>
+																		</div>
+																</div>
+
+																<div class="menu-image is-hidden-mobile">
+																		<img src="static/images/bg/shapes/megamenu-blue.svg" alt="">
+																</div>
+														</div>
+												</div>
+										</div>                <!-- Navbar item -->
+										<a class="navbar-item is-slide is-centered-tablet is-hidden-desktop is-hidden-tablet"  target="_blank" href="landing-v4-features.html">
+												<strong>
+													Start Here
+												</strong>
+										</a>
+
+								</div>
+
+								<!-- Navbar end -->
+								<div class="navbar-end">
+										<!-- Navbar item -->
+										<a class="navbar-item is-slide is-centered-tablet"  target="_blank" href="https://www.posri.re.kr/files/file_pdf/63/15605/63_15605_file_pdf_1546936319.pdf" data-lity>
+												<div class="link1"></div>
+										</a>
+										<!-- Navbar item -->
+										<a class="navbar-item is-slide is-centered-tablet"  target="_blank" href="https://www.onoffmix.com/event/184466">
+												<div class="link2"></div>
+										</a>
+										<!-- Navbar item -->
+										<a class="navbar-item is-slide is-centered-tablet"  target="_blank" href="#toolsets">
+												<div class="link3"></div>
+										</a>
+										<!-- Navbar item -->
+										<a class="navbar-item is-slide is-centered-tablet"  target="_blank" href="#examples">
+												<div class="link4"></div>
+										</a>
+										<a class="navbar-item is-slide is-centered-tablet"  target="_blank" href="remix.html#optimize=false&evmVersion=null&version=soljson-v0.1.4+commit.5f6c3cd.js&appVersion=0.7.7">
+												<div class="link5"></div>
+										</a>
+
+
+										<!-- Signup button -->
+										<div class="navbar-item is-button is-centered-tablet">
+											<!--
+												<a id="#signup-btn-double"  target="_blank" href="http://quorumtestnetkorea.avocadoterminal.com/" class="button button-cta is-bold btn-align secondary-btn raised" target="_blank">
+														Testnet
+												</a>-->
+
+												<a id="#signup-btn"  target="_blank" onClick="alert('The Quorum Korea Testnet Launches July 28th.')" class="button button-cta is-bold btn-align secondary-btn raised">
+														Testnet
+												</a>
+										</div>
+										<!-- Language Selector -->
+										<div class="navbar-item is-slide is-centered-tablet">
+											<div class="select lang_select">
+											</div>
+										</div>
+								</div>
+						</div>
+				</div>
+		</nav>
+		<script>
+				function  urlParams () {
+					var qs = window.location.hash.substr(1)
+
+					if (window.location.search.length > 0) {
+						// use legacy query params instead of hash
+						window.location.hash = window.location.search.substr(1)
+						window.location.search = ''
+					}
+
+					var params = {}
+					var parts = qs.split('&')
+					for (var x in parts) {
+						var keyValue = parts[x].split('=')
+						if (keyValue[0] !== '') {
+							params[keyValue[0]] = keyValue[1]
+						}
+					}
+					return params
+				}
+        const defaultVersion = '0.8.0'
+        let versionToLoad = urlParams().appVersion ? urlParams().appVersion : defaultVersion
+
+				let assets = {
+						'0.8.0': ['https://use.fontawesome.com/releases/v5.8.1/css/all.css', 'assets/css/pygment_trac.css'],
+						'0.7.7': ['assets/css/font-awesome.min.css', 'assets/css/pygment_trac.css']
+				}
+				let versions = {
+						'0.7.7': 'static/js/oldremixapp.js', // commit 7b5c7ae3de935e0ccc32eadfd83bf7349478491e
+						'0.8.0': 'static/js/remixapp.js'
+				}
+				for (let k in assets[versionToLoad]) {
+          let app = document.createElement('link')
+          app.setAttribute('rel', 'stylesheet')
+          app.setAttribute('href', assets[versionToLoad][k])
+          if (assets[versionToLoad][k] === 'https://use.fontawesome.com/releases/v5.8.1/css/all.css') {
+            app.setAttribute('integrity', 'sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf')
+            app.setAttribute('crossorigin', 'anonymous')
+          }
+          document.head.appendChild(app)
+        }
+				window.onload = () => {
+					let app = document.createElement('script')
+					app.setAttribute('src', versions[versionToLoad])
+					document.body.appendChild(app)
+				}
+		</script>
+
+
+		<div id="backtotop"><a  target="_blank" href="#"></a></div>        <!-- Concatenated jQuery and plugins -->
+		<script src="static/js/app.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		<!-- Bulkit js -->
+		<script src="static/js/main.js"></script>
+		<script src="static/js/landingv4.js"></script>
+
+		<!-- Lity Imports  -->
+		<link rel="stylesheet"  target="_blank" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.css" integrity="sha256-76wKiAXVBs5Kyj7j0T43nlBCbvR6pqdeeZmXI4ATnY0=" crossorigin="anonymous" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.js" integrity="sha256-28JiZvE/RethQIYCwkMdtSMHgI//KoTLeB2tSm10trs=" crossorigin="anonymous"></script>
+		<link rel="stylesheet"  target="_blank" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.css" integrity="sha256-0SZxASYAglrmIuTx+ZYHE3hzTnCZWB7XLu+iA8AG0Z0=" crossorigin="anonymous" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.js" integrity="sha256-3VzI8FuSG20IfvIDKRptBR+1d4T6G57eDIf6ZEO13iY=" crossorigin="anonymous"></script>
+
+		<script src="static/js/languageSwitcher.js"></script>
+	</body>
+</html>
