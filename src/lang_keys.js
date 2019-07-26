@@ -8,6 +8,7 @@ module.exports.LANGUAGES = {
     "#main_subtitle1" : "This site is the hub for Quorum Korea's Toolkits and repositories. Here, you can find easy access to a variety of translated docs, helpful code bits, and examples to help you develop on Quorum.",
     "#main_subtitle2" : "If you know blockchain and Ethereum already click the button below. If you are a beginner, check out the 'Start Here' section above.",
     "#main_button1" : "Jump In!",
+    "#main_button2" : "Orientation Decks",
     "#sec_header1" : "Toolsets",
     "#sec_sub1" : "Some helpful tools for building Quorum apps.",
     "#tool_descrip1" : "This Repo is the main repo for Quorum's Eth-based Blockchain solution",
@@ -41,7 +42,7 @@ module.exports.LANGUAGES = {
     ".drop_sec8" : "Enterprise Blockchain",
     ".drop_sub8" : "Download Enterprise Blockchain Deck",
     ".drop_cc_title" : "Main Repository",
-    ".drop_cc_body" : "This is the official Quorum Repository (English)"
+    ".drop_cc_body" : "This is the official Quorum Repository (English)",
   },
   "Ko" : {
     ".link1" : "부록잰 101",
@@ -52,6 +53,7 @@ module.exports.LANGUAGES = {
     "#main_subtitle1" : "이 사이트는 쿼럼 코리아의 툴킷과 저장고의 허브다. 여기서는 다양한 번역 문서, 유용한 코드 비트 및 쿼럼에서 개발할 수 있도록 도와주는 예를 쉽게 찾아볼 수 있다.",
     "#main_subtitle2" : "블록체인 및 Ethereum을 이미 알고 있는 경우 아래 버튼을 클릭하십시오. 초보자라면 위의 '여기서 시작' 섹션을 확인하십시오.",
     "#main_button1" : "Jump In!",
+    "#main_button2" : "오리엔테이션 패킷",
     "#sec_header1" : "툴킷",
     "#sec_sub1" : "쿼럼 애플리케이션 구축에 유용한 도구.",
     "#tool_descrip1" : "이 Repo는 쿼럼의 Eth-based Blockchain 솔루션의 주요 레포",
