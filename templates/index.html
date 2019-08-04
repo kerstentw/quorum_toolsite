@@ -190,7 +190,7 @@
                       <!-- Navbar end -->
                         <div class="navbar-end">
                             <!-- Navbar item -->
-                            <a class="navbar-item is-slide is-centered-tablet"  target="_blank" href="https://www.posri.re.kr/files/file_pdf/63/15605/63_15605_file_pdf_1546936319.pdf" data-lity>
+                            <a id="bar2" class="navbar-item is-slide is-centered-tablet modal-trigger"  target="_blank" href="https://www.posri.re.kr/files/file_pdf/63/15605/63_15605_file_pdf_1546936319.pdf" data-modal="basic-large-modal">
                               <div class="link1"></div>
                             </a>
                             <a class="navbar-item is-slide is-centered-tablet"  target="_blank" href="https://www.onoffmix.com/event/184466">
@@ -216,7 +216,7 @@
                                     Testnet
                                 </a>
                               -->
-                              <a id="#signup-btn"  target="_blank" onClick="alert('The Quorum Korea Testnet Launches July 28th.')" class="button button-cta is-bold btn-align secondary-btn raised">
+                              <a id="#signup-btn"  target="_blank" onClick="alert('Utilize the quorum testnet by setting: https://quorumtestnode.prftech.com as your Web3 or RPC provider (PORT 80).  It is currently set to RAFT consensus in public mode.  A second IBFT will be launched on the Monday before the Hackathon.')" class="button button-cta is-bold btn-align secondary-btn raised">
                                   Testnet
                               </a>
                             </div>
@@ -398,8 +398,28 @@
                         <!-- Navbar end -->
                         <div class="navbar-end">
                             <!-- Navbar item -->
-                            <a class="navbar-item is-slide is-centered-tablet"  target="_blank" href="https://www.posri.re.kr/files/file_pdf/63/15605/63_15605_file_pdf_1546936319.pdf" data-lity>
+                            <a id="bar1" class="navbar-item is-slide is-centered-tablet modal-trigger" data-modal="basic-modal" >
                                 <div class="link1"></div>
+                                <!-- Modal Markup -->
+
+                                <div id="basic-modal" class="modal modal-lg">
+                                    <div class="modal-background"></div>
+                                    <div class="modal-content">
+                                        <div class="flex-card simple-shadow">
+                                            <div class="card-body">
+                                                <div class="content">
+                                                  <object data="https://www.posri.re.kr/files/file_pdf/63/15605/63_15605_file_pdf_1546936319.pdf" type="application/pdf" style="width: 100%; height: 960px;">
+                                                    <embed src="https://www.posri.re.kr/files/file_pdf/63/15605/63_15605_file_pdf_1546936319.pdf" type="application/pdf" />
+                                                  </object>
+                                                  <!--
+                                                  <iframe src="https://www.posri.re.kr/files/file_pdf/63/15605/63_15605_file_pdf_1546936319.pdf" style="height: 1000px"></iframe>
+                                                -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="modal-close is-large is-hidden" aria-label="close"></button>
+                                </div>
                             </a>
                             <!-- Navbar item -->
                             <a class="navbar-item is-slide is-centered-tablet"  target="_blank" href="https://www.onoffmix.com/event/184466">
@@ -786,13 +806,15 @@
         <script src="static/js/main.js"></script>
         <script src="static/js/landingv4.js"></script>
 
-        <!-- Lity Imports  -->
+        <!-- Lity Imports
         <link rel="stylesheet"  target="_blank" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.css" integrity="sha256-76wKiAXVBs5Kyj7j0T43nlBCbvR6pqdeeZmXI4ATnY0=" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.js" integrity="sha256-28JiZvE/RethQIYCwkMdtSMHgI//KoTLeB2tSm10trs=" crossorigin="anonymous"></script>
         <link rel="stylesheet"  target="_blank" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.css" integrity="sha256-0SZxASYAglrmIuTx+ZYHE3hzTnCZWB7XLu+iA8AG0Z0=" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.js" integrity="sha256-3VzI8FuSG20IfvIDKRptBR+1d4T6G57eDIf6ZEO13iY=" crossorigin="anonymous"></script>
-
+-->
         <script src="static/js/languageSwitcher.js"></script>
+        <script src="static/js/components-modals.js"></script>
+
 
       </body>
 </html>
